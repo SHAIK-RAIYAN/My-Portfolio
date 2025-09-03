@@ -2,7 +2,7 @@ import useLenisScroll from "./utils/lenis"
 import "lenis/dist/lenis.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Home from "./components/Hero";
+import Home from "./components/Home";
 import About from "./components/About";
 import SkillSet from "./components/Skillset";
 import Projects from "./components/Projects";
@@ -15,6 +15,11 @@ function App() {
     <div className="bg-black font-dmsans min-h-screen scrollbar-none">
       <Navbar />
       <Home />
+      <div className="h-[100vh] flex justify-center items-center" id="home">
+        <h1 className="font-jakarta font-black text-white/60 md:text-9xl text-6xl tracking-widest ">
+          PORTOFOLIO
+        </h1>
+      </div>
       <About />
       <SkillSet />
       <Projects />

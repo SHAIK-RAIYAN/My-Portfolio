@@ -1,30 +1,14 @@
-import React from "react";
-import GlassNavbar from "./ui/GlassNavbar";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import GlassNavbar from "./ui/GlassNavbar";
 
 function Navbar() {
-  const navItems = [
-    {
-      name: "Home",
-      link: "#",
-    },
-    {
-      name: "About",
-      link: "#about",
-    },
-    {
-      name: "Contact",
-      link: "#contact",
-    },
-  ];
   return (
     <div className="w-full">
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{type:"spring" }}
-        className="fixed top-0 w-full flex justify-center ">
+        transition={{ type: "spring" }}
+        className="fixed top-0 w-full flex justify-center z-50">
         <GlassNavbar
           width={"fit"}
           height={"fit"}

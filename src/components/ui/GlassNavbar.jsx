@@ -260,7 +260,7 @@ const GlassNavbar = ({
     }
   };
 
-  const GlassNavbarClasses =
+  const glassSurfaceClasses =
     "relative flex items-center justify-center overflow-hidden transition-opacity duration-[260ms] ease-out";
 
   const focusVisibleClasses = isDarkMode
@@ -270,7 +270,7 @@ const GlassNavbar = ({
   return (
     <div
       ref={containerRef}
-      className={`${GlassNavbarClasses} ${focusVisibleClasses} ${className} px-5`}
+      className={`${glassSurfaceClasses} ${focusVisibleClasses} ${className} px-5`}
       style={getContainerStyles()}>
       <svg
         className="w-full h-full pointer-events-none absolute inset-0 opacity-0 -z-10"
