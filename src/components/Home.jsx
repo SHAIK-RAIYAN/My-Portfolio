@@ -71,7 +71,7 @@ function Home() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="relative w-44 h-44 md:w-60 md:h-60 mt-40 md:mt-0 overflow-hidden rounded-full shadow-[0_0_30px_rgba(200,170,142,0.89)]">
+          className="relative w-44 h-44 md:w-60 md:h-60 mt-40 md:mt-0 overflow-hidden rounded-full shadow-[0_0_30px_rgba(225,225,225,0.89)]">
           <img
             src="/Raiyan.jpg"
             alt="Shaik Raiyan"

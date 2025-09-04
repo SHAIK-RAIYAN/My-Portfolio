@@ -7,6 +7,8 @@ import About from "./components/About";
 import SkillSet from "./components/SkillSet";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import { GitHubCalendar } from 'react-github-calendar';
+import Github from './components/Github';
 
 
 function App() {
@@ -20,7 +22,10 @@ function App() {
           PORTOFOLIO
         </h1>
       </div>
-      <About />
+      <div className="flex flex-col items-center justify-center gap-7 px-10 ">
+        <About />
+        <Github/>
+      </div>
       <SkillSet />
       <Projects />
       <Contact />
