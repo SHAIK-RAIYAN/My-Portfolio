@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 function About() {
   return (
-    <div className=" md:w-[60%]  py-2 px-4  " id="about">
+    <div className=" md:w-[60%] mx-auto  py-2 md:px-4  " id="about">
       <div className="px-4 py-8">
         <ScrollFloat
           animationDuration={1}
@@ -14,6 +14,12 @@ function About() {
           textClassName="font-jakarta text-3xl text-white ">
           About me.
         </ScrollFloat>
+        <motion.div
+          initial={{ width:0, opacity: 0.5 }}
+          whileInView={{ width: "100%", opacity: 1 }}
+          transition={{ type: "tween", duration:1.5 }}
+          className="border-b-2 border-gray-400 pt-3 mb-3"
+        />
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -46,16 +52,21 @@ function About() {
           continuous drive to learn and adapt, I aim to enhance both
           functionality and user experience in every project I build.
         </motion.div>
-        <div className="border-b-2 border-gray-400 pt-3 mb-3" />
         <ScrollFloat
           animationDuration={1}
           ease="back.inOut(2)"
           scrollStart="center bottom+=50%"
           scrollEnd="bottom bottom-=40%"
           stagger={0.03}
-          textClassName="font-jakarta text-3xl text-white ">
+          textClassName="font-jakarta text-3xl text-white mt-10">
           Education.
         </ScrollFloat>
+        <motion.div
+          initial={{ width:0, opacity: 0.5 }}
+          whileInView={{ width: "100%", opacity: 1 }}
+          transition={{ type: "tween", duration:1.5 }}
+          className="border-b-2 border-gray-400 pt-3 mb-3"
+        />
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}

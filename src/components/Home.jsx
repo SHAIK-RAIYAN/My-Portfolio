@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { BackgroundRippleEffect } from "./ui/background-ripple-effect";
 
 function Home() {
   const { scrollY } = useScroll();
@@ -9,6 +10,10 @@ function Home() {
     <motion.div
       style={{ y: titleY }}
       className="absolute flex flex-col-reverse md:flex-row items-center justify-center gap-10 text-white h-screen px-6 md:px-12 bg-black/0 md:backdrop-blur-md backdrop-blur-sm z-10 overflow-hidden">
+      <div className="absolute inset-0 fade-ripple">
+        <BackgroundRippleEffect />
+      </div>
+
       <div className="h-screen relative md:top-1/3 flex flex-col text-4xl md:text-5xl lg:text-7xl font-semibold gap-3 w-full md:w-[70%] text-center md:text-left">
         <div className="relative overflow-hidden">
           <motion.div
@@ -24,17 +29,17 @@ function Home() {
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", delay: 1, duration: 0.5 }}
-            className="flex justify-center md:justify-start gap-2 md:gap-4 p-5 whitespace-nowrap w-auto max-w-full">
-            <p>I'm</p>
+            className="flex justify-start gap-2 md:gap-4 p-5 whitespace-normal w-auto max-w-full">
             <Typewriter
               options={{
                 strings: [
-                  "Shaik Raiyan.",
-                  "Java Programmer.",
-                  "Full-Stack Developer.",
+                  "I'm Shaik Raiyan.",
+                  "I'm a Java Programmer.",
+                  "I'm a Full-Stack Developer.",
                 ],
                 autoStart: true,
                 loop: true,
+                duration:1,
               }}
             />
           </motion.div>

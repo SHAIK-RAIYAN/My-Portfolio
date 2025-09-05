@@ -19,7 +19,9 @@ function Navbar() {
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </a>
 
-          <a href="#about" className="relative px-2 group font-mono">
+          <a
+            href="#about"
+            className="hidden md:inline-block relative px-2 group font-mono">
             About
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </a>
@@ -29,7 +31,9 @@ function Navbar() {
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </a>
 
-          <a href="#projects" className="relative px-2 group font-mono">
+          <a
+            href="#projects"
+            className="hidden md:inline-block relative px-2 group font-mono">
             Projects
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </a>

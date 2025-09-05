@@ -1,4 +1,4 @@
-import useLenisScroll from "./utils/lenis"
+import useLenisScroll from "./utils/lenis";
 import "lenis/dist/lenis.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -7,9 +7,7 @@ import About from "./components/About";
 import SkillSet from "./components/SkillSet";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import { GitHubCalendar } from 'react-github-calendar';
-import Github from './components/Github';
-
+import Github from "./components/Github";
 
 function App() {
   useLenisScroll();
@@ -18,15 +16,15 @@ function App() {
       <Navbar />
       <Home />
       <div className="h-[100vh] flex justify-center items-center" id="home">
-        <h1 className="font-jakarta font-black text-white/60 md:text-9xl text-6xl tracking-widest ">
+        {/* <h1 className="font-jakarta font-black text-white/60 md:text-9xl text-6xl tracking-widest ">
           PORTOFOLIO
-        </h1>
+        </h1> */}
       </div>
-      <div className="flex flex-col items-center justify-center gap-7 px-10 ">
+      <div className="flex flex-col justify-center gap-7 ">
         <About />
-        <Github/>
+        <Github />
+        <SkillSet />
       </div>
-      <SkillSet />
       <Projects />
       <Contact />
 
