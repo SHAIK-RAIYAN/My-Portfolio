@@ -4,10 +4,10 @@ import { AnimatedTabs } from "./ui/animated-tabs";
 
 function SkillSet() {
   return (
-    <div className="relative pb-40 mt-10" id="skills">
+    <div className="relative" id="skills">
       <WavyBackground className="absolute inset-0 w-full h-full z-0">
         <div
-          className="relative mx-auto z-10 md:w-[60%] py-4 md:px-4"
+          className="relative mt-10 mx-auto pb-40 z-10 md:w-[60%] py-4 md:px-4"
           id="skills">
           <div className="px-4 py-8">
             <div className="text-3xl text-white">My Skills</div>

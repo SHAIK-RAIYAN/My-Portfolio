@@ -5,25 +5,25 @@ import { cn } from "../../utils/accernity";
 import Magnet from "./magnet";
 
 const tab1 = [
-  { name: "java", size: 28 },
-  { name: "python", size: 25 },
-  { name: "js", size: 25 },
+  { name: "java"},
+  { name: "python" },
+  { name: "js" },
 ];
 
 const tab2 = [
-  { name: "html", size: 28 },
-  { name: "css", size: 25 },
-  { name: "react", size: 25 },
-  { name: "tailwind", size: 25 },
-  { name: "bootstrap", size: 25 },
-  { name: "node", size: 25 },
+  { name: "html"},
+  { name: "css" },
+  { name: "react" },
+  { name: "tailwind" },
+  { name: "bootstrap" },
+  { name: "node" },
 ];
 
 const tab3 = [
-  { name: "mongo", size: 28 },
-  { name: "sql", size: 25 },
-  { name: "git", size: 25 },
-  { name: "FramerMotion", size: 25 },
+  { name: "mongo"},
+  { name: "sql" },
+  { name: "git" },
+  { name: "FramerMotion" },
 ];
 
 const defaultTabs = [
@@ -42,7 +42,7 @@ const defaultTabs = [
                   src={`../src/assets/${skill.name}.svg`}
                   alt={skill.name}
                   width={70}
-                  className={`size-${skill.size}`}
+                  className="size-18 md:size-25"
                 />
               </div>
             </Magnet>
@@ -66,7 +66,7 @@ const defaultTabs = [
                   src={`../src/assets/${skill.name}.svg`}
                   alt={skill.name}
                   width={70}
-                  className={`size-${skill.size}`}
+                  className="size-18 md:size-25"
                 />
               </div>
             </Magnet>
@@ -90,7 +90,7 @@ const defaultTabs = [
                   src={`../src/assets/${skill.name}.svg`}
                   alt={skill.name}
                   width={70}
-                  className={`size-${skill.size}`}
+                  className="size-18 md:size-25"
                 />
               </div>
             </Magnet>
