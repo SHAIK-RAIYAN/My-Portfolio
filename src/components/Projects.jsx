@@ -1,4 +1,4 @@
-"use client";
+
 
 import { motion } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
@@ -9,14 +9,14 @@ const projects = [
     description:
       "A travel platform offering unique stays and experiences across popular destinations.",
     link: "https://wandernest-sffj.onrender.com/listings",
-    imgSrc: "../../src/assets/wandernest.png",
+    imgSrc: "/wandernest.png",
   },
   {
     title: "TripSage",
     description:
       "A personalized trip planning platform that suggests itineraries based on destination, budget, dates, and interests.",
     link: "https://trip-sage.onrender.com/",
-    imgSrc: "../../src/assets/tripsage.png",
+    imgSrc: "/tripsage.png",
   },
 ];
 

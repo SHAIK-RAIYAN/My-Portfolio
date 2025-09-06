@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/accernity";
@@ -39,7 +38,7 @@ const defaultTabs = [
                 <motion.img
                   drag
                   dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                  src={`../src/assets/${skill.name}.svg`}
+                  src={`/${skill.name}.svg`}
                   alt={skill.name}
                   width={70}
                   className="size-18 md:size-25"
@@ -63,7 +62,7 @@ const defaultTabs = [
                 <motion.img
                   drag
                   dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                  src={`../src/assets/${skill.name}.svg`}
+                  src={`/${skill.name}.svg`}
                   alt={skill.name}
                   width={70}
                   className="size-18 md:size-25"
@@ -87,7 +86,7 @@ const defaultTabs = [
                 <motion.img
                   drag
                   dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                  src={`../src/assets/${skill.name}.svg`}
+                  src={`/${skill.name}.svg`}
                   alt={skill.name}
                   width={70}
                   className="size-18 md:size-25"

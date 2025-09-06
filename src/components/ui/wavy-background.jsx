@@ -1,4 +1,4 @@
-"use client";
+
 import { cn } from "../../utils/accernity";
 import { useEffect, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
