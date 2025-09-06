@@ -21,56 +21,94 @@ function App() {
     if (soundOn) {
       audioRef.current.pause();
     } else {
+      audioRef.current.volume = 0.1;
       audioRef.current.play();
       audioRef.current.loop = true;
     }
     setSoundOn(!soundOn);
   };
 
+  const [overlayActive, setOverlayActive] = useState(true);
+  const startExperience = () => {
+    setOverlayActive(false);
+    audioRef.current.play().catch(() => {
+      console.log("Autoplay blocked, user must interact again.");
+    });
+  };
+
   return (
-    <div className="bg-black font-dmsans min-h-screen scrollbar-none">
-      <Navbar />
-      <Home />
-      <div
-        className="h-[100vh] flex justify-center items-center"
-        id="home"></div>
-      <div className="flex flex-col justify-center gap-7 ">
-        <About />
-        <Github />
-        <SkillSet />
-      </div>
-      <Projects />
-      <Contact />
-      <div className="flex justify-center items-center text-white/50 font-jakarta text-sm md:text-base py-4">
-        <p>&copy; 2025 Shaik Raiyan. All rights reserved.</p>
-      </div>
+    <div className="bg-black font-dmsans min-h-screen overflow-x-hidden no-scrollbar">
+      <AnimatePresence>
+        {overlayActive && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+            <div className="flex flex-col items-center">
+              <img
+                src="/logo.gif"
+                alt="Logo"
+                className="w-20 h-20 m-8 object-contain filter grayscale"
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={startExperience}
+                className="px-10 py-3 rounded-full border border-[#ffffff] text-[#ffffff] font-bold tracking-[0.5em] bg-transparent transition-all duration-300 hover:bg-[#d7d7d7] hover:text-black">
+                START
+              </motion.button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      <button
-        onClick={toggleSound}
-        className="z-50 fixed bottom-30 right-5 text-white transition-all font-bold tracking-widest text-xs md:text-sm origin-bottom-right flex items-center justify-center group"
-        style={{
-          transform: "rotate(-90deg)",
-          background: "transparent",
-          border: "none",
-        }}>
-        <span className="opacity-50 group-hover:opacity-100 transition-opacity">
-          SOUND
-        </span>
+      {!overlayActive && (
+        <div className="relative z-0">
+          <Navbar />
+          <Home />
+          <div
+            className="h-[100vh] flex justify-center items-center"
+            id="home"
+          />
+          <div className="flex flex-col justify-center gap-7">
+            <About />
+            <Github />
+            <SkillSet />
+          </div>
+          <Projects />
+          <Contact />
+          <div className="flex justify-center items-center text-white/50 font-jakarta text-sm md:text-base py-4">
+            <p>&copy; 2025 Shaik Raiyan. All rights reserved.</p>
+          </div>
 
-        <div className="relative inline-block w-[4ch] h-5.5 text-center">
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={soundOn ? "ON" : "OFF"}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute left-0 right-0">
-              {soundOn ? "ON" : "OFF"}
-            </motion.span>
-          </AnimatePresence>
+          <button
+            onClick={toggleSound}
+            className="z-40 fixed bottom-30 right-5 text-white transition-all font-bold tracking-widest text-xs md:text-sm origin-bottom-right flex items-center justify-center group"
+            style={{
+              transform: "rotate(-90deg)",
+              background: "transparent",
+              border: "none",
+            }}>
+            <span className="opacity-50 group-hover:opacity-100 transition-opacity">
+              SOUND
+            </span>
+            <div className="relative inline-block w-[4ch] h-5.5 text-center">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={soundOn ? "ON" : "OFF"}
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="absolute left-0 right-0">
+                  {soundOn ? "ON" : "OFF"}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+          </button>
         </div>
-      </button>
+      )}
     </div>
   );
 }

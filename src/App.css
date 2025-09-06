@@ -25,6 +25,22 @@
     0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
 
+@font-face {
+  font-family: "Roboto-Flex";              /* choose any friendly name */
+  src: url("/Roboto-Flex.woff2") format("woff2");
+  font-weight: 1 1000;                      /* declare full variable range */
+  font-style: normal;
+  font-stretch: 50% 200%;
+  font-display: swap;
+}
+
+
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 
 .fade-ripple {
   mask-image: linear-gradient(to bottom, black 0%,  transparent 100%);
