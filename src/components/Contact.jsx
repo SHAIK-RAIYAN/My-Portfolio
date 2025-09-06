@@ -1,13 +1,13 @@
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import TextPressure from "./ui/TextPressure";
 import { ContactForm } from "./ContactForm";
+import PressureText from './ui/PressureText';
 
 function Contact() {
   return (
     <div className="flex flex-col justify-center items-center md:flex-row " id="contact">
       <div className="w-full md:w-[60%] flex justify-center items-center border-t md:border-t-0 md:border-l border-gray-300 px-6 py-6">
         <div className="w-full max-w-md flex flex-col justify-center items-center text-center gap-3">
-          <TextPressure
+          <PressureText
             text="Get In Touch!"
             flex={true}
             alpha={false}

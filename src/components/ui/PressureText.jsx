@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 const FONT_FAMILY = `"Roboto-Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`;
 
-const TextPressure = ({
+const PressureText = ({
   text = "Compressa",
   fontFamily = FONT_FAMILY,
   width = true,
@@ -251,4 +251,4 @@ const TextPressure = ({
   );
 };
 
-export default TextPressure;
+export default PressureText;
