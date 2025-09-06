@@ -1,22 +1,24 @@
-"use client";
-
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TextPressure = ({
   text = "Compressa",
   fontFamily = "Compressa VF",
   fontUrl = "https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2",
+
   width = true,
   weight = true,
   italic = true,
   alpha = false,
+
   flex = true,
   stroke = false,
   scale = false,
+
   textColor = "#FFFFFF",
   strokeColor = "#FF0000",
   strokeWidth = 2,
   className = "",
+
   minFontSize = 24,
 }) => {
   const containerRef = useRef(null);
@@ -75,7 +77,7 @@ const TextPressure = ({
 
     let newFontSize = containerW / (chars.length / 2);
     newFontSize = Math.max(newFontSize, minFontSize);
-
+    
     setFontSize(newFontSize);
     setScaleY(1);
     setLineHeight(1);
@@ -126,8 +128,8 @@ const TextPressure = ({
 
           const wdth = width ? Math.floor(getAttr(d, 5, 200)) : 100;
           const wght = weight ? Math.floor(getAttr(d, 100, 900)) : 400;
-          const italVal = italic ? getAttr(d, 0, 1).toFixed(2) : "0";
-          const alphaVal = alpha ? getAttr(d, 0, 1).toFixed(2) : "1";
+          const italVal = italic ? getAttr(d, 0, 1).toFixed(2) : 0;
+          const alphaVal = alpha ? getAttr(d, 0, 1).toFixed(2) : 1;
 
           span.style.opacity = alphaVal;
           span.style.fontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;

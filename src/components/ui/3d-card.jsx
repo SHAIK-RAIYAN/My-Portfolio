@@ -2,7 +2,7 @@
 
 import { cn } from "../../utils/accernity";
 
-import React, {
+import {
   createContext,
   useState,
   useContext,
