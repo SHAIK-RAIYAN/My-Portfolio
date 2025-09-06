@@ -1,5 +1,5 @@
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import TextPressure from "./ui/TextPressure.jsx";
+import TextPressure from "./ui/TextPressure";
 import { ContactForm } from "./ContactForm";
 
 function Contact() {

@@ -72,13 +72,13 @@ function Home() {
       <motion.div
         initial={{ opacity: 0, x: "100%" }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ type: "spring", delay:1.5 }}>
+        transition={{ type: "spring", delay:1.2, damping:25 }}>
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="relative w-44 h-44 md:w-60 md:h-60 mt-40 md:mt-0 overflow-hidden rounded-full shadow-[0_0_30px_rgba(225,225,225,0.89)]">
+          transition={{ duration: 0.3, type: "tween" }}
+          className="relative w-44 h-44 md:w-80 md:h-80 mt-40 md:mt-0 overflow-hidden rounded-full shadow-[0_0_30px_rgba(225,225,225,0.89)]">
           <img
             src="/Raiyan.jpg"
             alt="Shaik Raiyan"

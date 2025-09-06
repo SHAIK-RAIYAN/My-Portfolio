@@ -2,8 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
- 
- 
 const FONT_FAMILY = `"Roboto-Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`;
 
 const TextPressure = ({
@@ -117,10 +115,6 @@ const TextPressure = ({
         setTimeout(() => {
           if (spansRef.current && spansRef.current[0]) {
             // eslint-disable-next-line no-console
-            console.log(
-              "TextPressure: computed font-family:",
-              window.getComputedStyle(spansRef.current[0]).fontFamily
-            );
           }
         }, 80);
       }
