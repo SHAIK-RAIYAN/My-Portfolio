@@ -31,7 +31,7 @@ function Home() {
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", delay: 1, duration: 0.5 }}
-            className="flex justify-start gap-2 md:gap-4 p-5 whitespace-normal w-auto max-w-full">
+            className="flex justify-start gap-2 md:gap-4 py-5 whitespace-normal w-auto max-w-full">
             <Typewriter
               options={{
                 strings: [
