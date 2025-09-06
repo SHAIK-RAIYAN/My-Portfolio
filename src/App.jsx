@@ -16,14 +16,14 @@ function App() {
 
   const [soundOn, setSoundOn] = useState(true);
   const audioRef = useRef(new Audio("Dandelions.mp3"));
+  audioRef.current.volume = 0.1;
+  audioRef.current.loop = true;
 
   const toggleSound = () => {
     if (soundOn) {
       audioRef.current.pause();
     } else {
-      audioRef.current.volume = 0.1;
       audioRef.current.play();
-      audioRef.current.loop = true;
     }
     setSoundOn(!soundOn);
   };
@@ -84,16 +84,16 @@ function App() {
 
           <button
             onClick={toggleSound}
-            className="z-40 fixed bottom-30 right-5 text-white transition-all font-bold tracking-widest text-xs md:text-sm origin-bottom-right flex items-center justify-center group"
+            className="z-40 fixed bottom-30 right-5 text-white transition-all font-bold tracking-widest text-xs md:text-sm origin-bottom-right flex items-center justify-center group gap-1"
             style={{
               transform: "rotate(-90deg)",
               background: "transparent",
               border: "none",
             }}>
-            <span className="opacity-50 group-hover:opacity-100 transition-opacity">
+            <span className="opacity-50 group-hover:opacity-100 transition-opacity ">
               SOUND
             </span>
-            <div className="relative inline-block w-[4ch] h-5.5 text-center">
+            <div className="relative  w-[4ch] text-center flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={soundOn ? "ON" : "OFF"}
