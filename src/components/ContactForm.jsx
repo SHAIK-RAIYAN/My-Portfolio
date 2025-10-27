@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
@@ -95,7 +94,7 @@ export function ContactForm() {
             <Label htmlFor="firstname">First name</Label>
             <Input
               id="firstname"
-              placeholder="Tyler"
+              placeholder="Raiyan"
               type="text"
               value={formData.firstname}
               onChange={handleChange}
@@ -106,7 +105,7 @@ export function ContactForm() {
             <Label htmlFor="lastname">Last name</Label>
             <Input
               id="lastname"
-              placeholder="Durden"
+              placeholder="Shaik"
               type="text"
               value={formData.lastname}
               onChange={handleChange}
@@ -119,7 +118,7 @@ export function ContactForm() {
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
-            placeholder="projectmayhem@fc.com"
+            placeholder="shaikraiyan2005@gmail.com"
             type="email"
             value={formData.email}
             onChange={handleChange}

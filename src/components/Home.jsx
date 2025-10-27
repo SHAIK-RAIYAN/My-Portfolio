@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BackgroundRippleEffect } from "./ui/background-ripple-effect";
+import { HoverBorderGradient } from "./ui/HoverBorderGradient";
+import { Download } from "lucide-react";
 
 function Home() {
   const { scrollY } = useScroll();
@@ -51,18 +53,31 @@ function Home() {
           <motion.div
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "easeInOut", duration: 0.5, delay: 1.5 }}>
+            transition={{ type: "easeInOut", duration: 0.5, delay: 1.5 }}
+          className="py-5">
             <p className="text-gray-400 text-sm md:text-lg font-normal font-jakarta w-full md:w-3/4 mt-3">
               I’m a curious full-stack developer who loves turning ideas into
               smooth, scalable, and fun digital experiences powered by the MERN
               stack, SQL, and Java—with a growing edge in DSA.
             </p>
-            <span className="text-white text-lg md:text-xl flex justify-center md:justify-start gap-4 pt-3">
+            <span className="text-white text-lg md:text-xl flex justify-center items-center md:justify-start gap-4 pt-3">
               <a href="https://github.com/SHAIK-RAIYAN/" target="_blank">
                 <FaGithub />
               </a>
               <a href="https://linkedin.com/in/shaik-raiyan/" target="_blank">
                 <FaLinkedin />
+              </a>
+              <a
+                href="/resume/SHAIK RAIYAN.pdf"
+                target="_blank"
+                rel="noopener noreferrer">
+                <HoverBorderGradient
+                  containerClassName="rounded-full "
+                  as="button"
+                  className="text-white flex items-center space-x-2 text-sm">
+                  <Download className="w-4 h-4" />
+                  <span>Resume</span>
+                </HoverBorderGradient>
               </a>
             </span>
           </motion.div>
@@ -72,7 +87,7 @@ function Home() {
       <motion.div
         initial={{ opacity: 0, x: "100%" }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ type: "spring", delay:1.2, damping:25 }}>
+        transition={{ type: "spring", delay: 1.2, damping: 25 }}>
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}

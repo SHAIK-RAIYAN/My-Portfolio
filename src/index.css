@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+::selection {
+  background-color: #ffffffa0; /* light grey background */
+  color: #000; /* black text for contrast */
+}
+
+::-moz-selection {
+  background-color: #ffffffa0; /* Firefox */
+  color: #000;
+}
+
+::-webkit-selection {
+  background-color: #ffffffa0; /* Safari / old WebKit browsers */
+  color: #000;
+}
