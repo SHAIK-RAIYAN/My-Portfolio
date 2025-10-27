@@ -16,7 +16,7 @@ function App() {
 
   const [soundOn, setSoundOn] = useState(true);
   const audioRef = useRef(new Audio("Dandelions.mp3"));
-  audioRef.current.volume = 0.1;
+  audioRef.current.volume = 0.01;
   audioRef.current.loop = true;
 
   const toggleSound = () => {

@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
+/* Text when selected */
 ::selection {
-  background-color: #ffffffa0; /* light grey background */
-  color: #000; /* black text for contrast */
+  background-color: #ffffffa0;
+  color: #000;
 }
 
 ::-moz-selection {
@@ -11,6 +12,18 @@
 }
 
 ::-webkit-selection {
-  background-color: #ffffffa0; /* Safari / old WebKit browsers */
+  background-color: #ffffffa0; /* Safari / old browsers */
   color: #000;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar  */
+html,
+body {
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: auto;
 }

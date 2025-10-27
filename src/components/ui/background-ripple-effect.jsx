@@ -1,10 +1,9 @@
-
 import { useMemo, useRef, useState } from "react";
 import { cn } from "../../utils/accernity";
 
 export const BackgroundRippleEffect = ({
-  rows = 8,
-  cols = 27,
+  rows = 9,
+  cols = 35,
   cellSize = 56,
 }) => {
   const [clickedCell, setClickedCell] = useState(null);
