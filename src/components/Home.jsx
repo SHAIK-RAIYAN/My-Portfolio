@@ -54,7 +54,7 @@ function Home() {
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", duration: 0.5, delay: 1.5 }}
-          className="py-5">
+            className="py-5">
             <p className="text-gray-400 text-sm md:text-lg font-normal font-jakarta w-full md:w-3/4 mt-3">
               I’m a curious full-stack developer who loves turning ideas into
               smooth, scalable, and fun digital experiences powered by the MERN
@@ -74,7 +74,7 @@ function Home() {
                 <HoverBorderGradient
                   containerClassName="rounded-full "
                   as="button"
-                  className="text-white flex items-center space-x-2 text-sm">
+                  className="text-white flex items-center space-x-2 text-sm ">
                   <Download className="w-4 h-4" />
                   <span>Resume</span>
                 </HoverBorderGradient>

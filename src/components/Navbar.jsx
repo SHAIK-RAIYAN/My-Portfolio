@@ -2,34 +2,32 @@ import { motion } from "framer-motion";
 import GlassNavbar from "./ui/GlassNavbar";
 
 function Navbar() {
-
-const handleNavClick = (e) => {
-  e.preventDefault();
-  const href = e.currentTarget.getAttribute("href");
-  const id = href.replace("#", "");
-  const target = document.getElementById(id);
-  if (!target) return;
-  const navEl = document.getElementById("site-navbar");
-  const navHeight = navEl ? navEl.getBoundingClientRect().height : 0;
-  const top = Math.max(
-    0,
-    target.getBoundingClientRect().top + window.scrollY - navHeight - 8
-  );
-  if (window.lenis && typeof window.lenis.scrollTo === "function") {
-    window.lenis.scrollTo(top);
-  } else {
-    window.scrollTo({ top, behavior: "smooth" });
-  }
-  history.replaceState(null, "", `#${id}`);
-};
-
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute("href");
+    const id = href.replace("#", "");
+    const target = document.getElementById(id);
+    if (!target) return;
+    const navEl = document.getElementById("site-navbar");
+    const navHeight = navEl ? navEl.getBoundingClientRect().height : 0;
+    const top = Math.max(
+      0,
+      target.getBoundingClientRect().top + window.scrollY - navHeight - 8
+    );
+    if (window.lenis && typeof window.lenis.scrollTo === "function") {
+      window.lenis.scrollTo(top);
+    } else {
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+    history.replaceState(null, "", `#${id}`);
+  };
 
   return (
     <div className="w-full">
       <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ type: "spring", delay:1 }}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", delay: 1 }}
         className="fixed top-0 w-full flex justify-center z-40">
         <GlassNavbar
           id="site-navbar"
