@@ -9,7 +9,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Github from "./components/Github";
 import { useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 
 function App() {
   useLenisScroll();
@@ -35,6 +35,8 @@ function App() {
       console.log("Autoplay blocked, user must interact again.");
     });
   };
+
+  const scrollYProgress = useScroll().scrollYProgress;
 
   return (
     <div className="bg-black font-dmsans min-h-screen overflow-x-hidden no-scrollbar">
@@ -65,12 +67,19 @@ function App() {
 
       {!overlayActive && (
         <div className="relative z-0">
+          <motion.div
+            style={{
+              scaleX: scrollYProgress,
+              background: "linear-gradient(90deg, #999c 90%, #fff 100%)",
+            }}
+            className="w-full h-[1px] fixed z-20 origin-top-left"></motion.div>
           <Navbar />
           <Home />
           <div
             className="h-[100vh] flex justify-center items-center"
             id="home"
           />
+
           <div className="flex flex-col justify-center gap-7">
             <About />
             <Github />
