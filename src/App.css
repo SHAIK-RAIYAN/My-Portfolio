@@ -1,10 +1,37 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VT323-Regular";
+  src: url("/fonts/VT323-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-pixel: "VT323-Regular", monospace;
+}
 
 /* Accernity UI */
 @theme inline {
   --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
-  var(--delay, 0ms);
- 
+    var(--delay, 0ms);
+
   @keyframes cell-ripple {
     0% {
       opacity: 0.4;
@@ -19,32 +46,31 @@
 }
 
 @theme inline {
-  --shadow-input:
-    0px 2px 3px -1px rgba(0, 0, 0, 0.1),
+  --shadow-input: 0px 2px 3px -1px rgba(0, 0, 0, 0.1),
     0px 1px 0px 0px rgba(25, 28, 33, 0.02),
     0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
 
 @font-face {
-  font-family: "Roboto-Flex";              /* choose any friendly name */
+  font-family: "Roboto-Flex";
   src: url("/Roboto-Flex.woff2") format("woff2");
-  font-weight: 1 1000;                      /* declare full variable range */
+  font-weight: 1 1000;
   font-style: normal;
   font-stretch: 50% 200%;
   font-display: swap;
 }
 
-
-html, body {
-  overflow-x: hidden;       
-  overflow-y: auto;         
-  -webkit-overflow-scrolling: touch; 
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   height: 100%;
-  overscroll-behavior: none; 
+  overscroll-behavior: none;
+  font-family: var(--font-poppins);
 }
 
-
 .fade-ripple {
-  mask-image: linear-gradient(to bottom, black 0%,  transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }

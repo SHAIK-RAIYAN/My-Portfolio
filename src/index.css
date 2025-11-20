@@ -16,14 +16,25 @@
   color: #000;
 }
 
+/* Hide scrollbar  */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar  */
 html,
 body {
   -ms-overflow-style: none; /* Edge */
   scrollbar-width: none; /* Firefox */
   overflow: auto;
+}
+
+/* Infinite moving cards component */
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+ 
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
 }

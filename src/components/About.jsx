@@ -1,9 +1,9 @@
-import ScrollFloat from "./ui/ScrollFloat";
 import { motion } from "motion/react";
+import ScrollFloat from "./ui/ScrollFloat";
 
 function About() {
   return (
-    <div className=" md:w-[60%] mx-auto  py-2 md:px-4  " id="about">
+    <div className=" mx-auto  py-2" id="about">
       <div className="px-4 py-8">
         <ScrollFloat
           animationDuration={1}
@@ -15,17 +15,17 @@ function About() {
           About me.
         </ScrollFloat>
         <motion.div
-          initial={{ width:0, opacity: 0.5 }}
+          initial={{ width: 0, opacity: 0.5 }}
           whileInView={{ width: "100%", opacity: 1 }}
-          transition={{ type: "tween", duration:1.5 }}
-          className="border-b-2 border-gray-400 pt-3 mb-3"
+          transition={{ type: "tween", duration: 1.5 }}
+          className="border-b-2 border-gray-400 mb-3"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.8 }}
-          className="md:text-xl text-sm mb-2 text-gray-400">
+          className="md:text-lg text-sm mb-2 text-gray-400">
           I am a Computer Science Engineering student at Kalasalingam Academy of
           Research and Education and a passionate full-stack developer with a
           strong focus on building scalable and user-friendly web applications.
@@ -35,7 +35,7 @@ function About() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.8 }}
-          className="md:text-xl text-sm mb-2 text-gray-400">
+          className="md:text-lg text-sm mb-2 text-gray-400">
           My expertise spans programming languages such as Java, JavaScript, and
           Python, along with foundational knowledge in Data Structures including
           linked lists, stacks, and queues.
@@ -45,7 +45,7 @@ function About() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.8 }}
-          className="md:text-xl text-sm mb-2 text-gray-400">
+          className="md:text-lg text-sm mb-2 text-gray-400">
           I work extensively with modern web technologies like React.js, HTML,
           CSS, Bootstrap, Tailwind CSS, Node.js, and Express, while leveraging
           databases and tools such as MongoDB, SQL, Git, and GitHub. With a
@@ -62,17 +62,17 @@ function About() {
           Education.
         </ScrollFloat>
         <motion.div
-          initial={{ width:0, opacity: 0.5 }}
+          initial={{ width: 0, opacity: 0.5 }}
           whileInView={{ width: "100%", opacity: 1 }}
-          transition={{ type: "tween", duration:1.5 }}
-          className="border-b-2 border-gray-400 pt-3 mb-3"
+          transition={{ type: "tween", duration: 1.5 }}
+          className="border-b-2 border-gray-400 mb-3"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.8 }}
-          className="md:text-xl text-sm mb-2 text-gray-400">
+          className="md:text-lg text-sm mb-2 text-gray-400">
           2022 – 2026 (present): B.Tech in Computer Science and Engineering
           AIML, Kalasalingam Academy of Research and Education — CGPA: 9.08
         </motion.div>
@@ -81,7 +81,7 @@ function About() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.8 }}
-          className="md:text-xl text-sm mb-2 text-gray-400">
+          className="md:text-lg text-sm mb-2 text-gray-400">
           2020 – 2022: Intermediate Education, Krishna Chaitanya Junior College
           — Percentage: 74.6%
         </motion.div>
@@ -90,7 +90,7 @@ function About() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.8 }}
-          className="md:text-xl text-sm mb-2 text-gray-400">
+          className="md:text-lg text-sm mb-2 text-gray-400">
           2019 – 2020: 10th Class, Dr. Kishore’s Ratnam — Percentage: 95.16%
         </motion.div>
       </div>

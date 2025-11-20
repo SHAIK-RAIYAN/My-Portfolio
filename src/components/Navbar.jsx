@@ -28,21 +28,20 @@ function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", delay: 1 }}
-        className="fixed top-0 w-full flex justify-center z-40">
+        className="fixed top-0 w-full flex justify-start z-40 mt-8">
+        <img
+          src="/founder2.jpg"
+          alt="Home"
+          href="#home"
+          onClick={handleNavClick}
+          className="h-13 w-13 object-cover p-1 rounded-2xl border border-neutral-500 hover:scale-98 active:scale-95 cursor-pointer ml-5"
+        />
         <GlassNavbar
           id="site-navbar"
           width={"fit"}
           height={"fit"}
           borderRadius={24}
-          className="text-white font-light text-lg gap-8 mt-8 p-3 ">
-          <a
-            href="#home"
-            onClick={handleNavClick}
-            className="relative px-2 group font-normal font-mono">
-            Home
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </a>
-
+          className="text-white font-light text-lg gap-8 p-3 mx-3">
           <a
             href="#about"
             onClick={handleNavClick}
