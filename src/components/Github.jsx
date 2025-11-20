@@ -20,8 +20,11 @@ function Github() {
 
   return (
     <div className="px-4">
+      
       <h2 className="text-2xl">GitHub Activity</h2>
-      {total !== null && <span className="text-neutral-400">Total: {total} contributions</span>}{" "}
+      {total !== null && (
+        <span className="text-neutral-400">Total: {total} contributions</span>
+      )}{" "}
       <motion.div
         initial={{ width: 0, opacity: 0.5 }}
         whileInView={{ width: "100%", opacity: 1 }}

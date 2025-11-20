@@ -69,7 +69,10 @@ function Projects() {
     <div className="relative pb-40 -mt-20" id="skills">
       <div className="relative mx-auto z-10 md:px-4" id="projects">
         <div className="px-4 py-8">
-          <div className="text-3xl text-white">Featured Projects</div>
+          <div className="text-3xl text-white flex flex-col">
+            <p className="text-xl text-neutral-400 ">Featured</p>
+            <p> Projects</p>
+          </div>
           <motion.div
             initial={{ width: 0, opacity: 0.5 }}
             whileInView={{ width: "100%", opacity: 1 }}
@@ -79,7 +82,7 @@ function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {MajorProjects.map((project, index) => (
               <CardContainer key={index} className="inter-var w-full">
-                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.3] border-black/[0.1] w-full h-auto rounded-xl p-2 border">
+                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-rose-500/[0.1] dark:bg-black dark:border-white/[0.3] border-black/[0.1] w-full h-auto rounded-xl p-2 border">
                   <CardItem translateZ="20" className="w-full p-2">
                     <img
                       src={project.imgSrc}
@@ -113,7 +116,10 @@ function Projects() {
               </CardContainer>
             ))}
           </div>
-          <div className="text-3xl text-white mt-3">Supporting Projects</div>
+          <div className="text-3xl text-white mt-3">
+            <p className="text-xl text-neutral-400 ">Supporting</p>
+            <p> Projects</p>
+          </div>
           <motion.div
             initial={{ width: 0, opacity: 0.5 }}
             whileInView={{ width: "100%", opacity: 1 }}
@@ -124,7 +130,7 @@ function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <CardContainer key={index} className="w-full">
-                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.3] border-black/[0.1] w-full h-auto rounded-xl p-2 border">
+                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-rose-500/[0.1] dark:bg-black dark:border-white/[0.3] border-black/[0.1] w-full h-auto rounded-xl p-2 border">
                   <CardItem translateZ="20" className="w-full p-2">
                     <img
                       src={project.imgSrc}

@@ -4,7 +4,10 @@ import GlassNavbar from "./ui/GlassNavbar";
 function Navbar() {
   const handleNavClick = (e) => {
     e.preventDefault();
-    const href = e.currentTarget.getAttribute("href");
+    const href =
+      e.currentTarget.getAttribute("href") ||
+      e.target?.closest?.("[href]")?.getAttribute("href");
+    if (!href) return;
     const id = href.replace("#", "");
     const target = document.getElementById(id);
     if (!target) return;
@@ -29,13 +32,13 @@ function Navbar() {
         animate={{ y: 0 }}
         transition={{ type: "spring", delay: 1 }}
         className="fixed top-0 w-full flex justify-start z-40 mt-8">
-        <img
-          src="/founder2.jpg"
-          alt="Home"
-          href="#home"
-          onClick={handleNavClick}
-          className="h-13 w-13 object-cover p-1 rounded-2xl border border-neutral-500 hover:scale-98 active:scale-95 cursor-pointer ml-5"
-        />
+        <a href="#home" onClick={handleNavClick} className="ml-3 md:ml-5">
+          <img
+            src="/founder2.jpg"
+            alt="Home"
+            className="h-13 w-13 object-cover p-1 rounded-2xl border border-neutral-500 hover:scale-98 active:scale-95 cursor-pointer"
+          />
+        </a>
         <GlassNavbar
           id="site-navbar"
           width={"fit"}
@@ -61,7 +64,7 @@ function Navbar() {
           <a
             href="#projects"
             onClick={handleNavClick}
-            className="hidden md:inline-block relative px-2 group font-mono">
+            className=" md:inline-block relative px-2 group font-mono">
             Projects
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </a>

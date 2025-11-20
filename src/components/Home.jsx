@@ -6,6 +6,7 @@ import { Tooltip } from "react-tooltip";
 import Typewriter from "typewriter-effect";
 import docIcon from "./../assets/icons/document.json";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
+import SpotifyCard from "./ui/SpotifyCard";
 
 function Home() {
   const playerRef = useRef(null);
@@ -14,9 +15,11 @@ function Home() {
   };
 
   return (
-    <motion.div className="flex flex-col justify-center gap-10 text-white h-screen px-6 z-10 overflow-hidden">
+    <motion.div
+      className="flex flex-col justify-center gap-10 text-white h-screen px-6 md:mt-10 overflow-hidden"
+      id="home">
       <motion.div
-        initial={{ opacity: 0, x: "100%" }}
+        initial={{ opacity: 0, x: "-80%" }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", delay: 1.2, damping: 25 }}>
         <motion.div
@@ -24,7 +27,7 @@ function Home() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.3, type: "tween" }}
-          className="relative w-44 h-44 md:h-70 md:w-70 mt-40 md:mt-0 overflow-hidden rounded-full border border-neutral-500 mx-auto md:mx-0">
+          className="relative w-44 h-44 md:h-60 md:w-60 md:mt-0 overflow-hidden rounded-full border border-neutral-500 mx-auto md:mx-0">
           <img
             src="/Raiyan.jpg"
             alt="Shaik Raiyan"
@@ -39,8 +42,11 @@ function Home() {
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", delay: 1, duration: 0.5 }}>
-            <h2 className="text-[#e5e7eb] font-pixel text-2xl md:text-3xl lg:text-6xl py-4 relative z-20 font-bold tracking-tight">
-              Hi, I'm Shaik Raiyan
+            <h2 className="text-[#e5e7eb] font-pixel text-4xl lg:text-6xl py-4 relative z-20 font-bold tracking-tight">
+              Hi, I'm Shaik Raiyan{" "}
+              <p className="italic font-extralight text-xl text-neutral-600 font-pixel">
+                I write something for machines and they understand!
+              </p>
             </h2>
           </motion.div>
         </div>
@@ -50,13 +56,13 @@ function Home() {
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", delay: 1, duration: 0.5 }}
-            className="flex justify-start gap-2 text-4xl text-[#868686] md:gap-4 py-5 whitespace-normal w-auto max-w-full">
+            className="flex justify-center md:justify-start gap-2 text-3xl md:text-4xl text-[#868686] md:gap-4 whitespace-normal w-auto max-w-full">
             <Typewriter
               options={{
                 strings: ["A Full-Stack Developer.", "A Java Programmer."],
                 autoStart: true,
                 loop: true,
-                duration: 1,
+                duration: 0.7,
               }}
             />
           </motion.div>
@@ -68,7 +74,7 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", duration: 0.5, delay: 1.5 }}
             className="py-5">
-            <p className="text-gray-400 text-sm md:text-lg font-normal font-jakarta w-full mt-3">
+            <p className="text-gray-400 text-sm md:text-lg font-normal font-jakarta w-full">
               I’m a curious full-stack developer who loves turning ideas into
               smooth, scalable, and fun digital experiences powered by the MERN
               stack, SQL, and Java—with a growing edge in DSA.
@@ -106,6 +112,7 @@ function Home() {
             </span>
           </motion.div>
         </div>
+        <SpotifyCard />
       </div>
 
       <Tooltip

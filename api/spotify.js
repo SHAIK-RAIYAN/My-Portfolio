@@ -29,21 +29,15 @@ const getAccessToken = async () => {
 
 export const getNowPlaying = async () => {
   const { access_token } = await getAccessToken();
-
   return fetch(NOW_PLAYING_ENDPOINT, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
+    headers: { Authorization: `Bearer ${access_token}` },
   });
 };
 
 export const getRecentlyPlayed = async () => {
   const { access_token } = await getAccessToken();
-
   return fetch(TOP_TRACKS_ENDPOINT, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
+    headers: { Authorization: `Bearer ${access_token}` },
   });
 };
 
@@ -51,7 +45,7 @@ export default async function handler(req, res) {
   try {
     const response = await getNowPlaying();
 
-    // Case 1: Not playing anything or 204 No Content
+    // Case 1: Not playing anything (204) or Error
     if (response.status === 204 || response.status > 400) {
       const recentResponse = await getRecentlyPlayed();
       const recentData = await recentResponse.json();

@@ -15,7 +15,7 @@ function App() {
   const scrollYProgress = useScroll().scrollYProgress;
 
   return (
-    <div className="max-w-[900px] w-full mx-auto px-12 bg-[#0a0a0a] font-dmsans min-h-screen overflow-x-hidden no-scrollbar border-l border-r border-neutral-800">
+    <div className="max-w-[900px] w-full mx-auto md:px-12 bg-[#0a0a0a] font-dmsans min-h-screen overflow-x-hidden no-scrollbar border-l border-r border-neutral-800">
       <div className="relative z-0">
         <motion.div
           style={{
@@ -26,7 +26,8 @@ function App() {
         />
 
         <Navbar />
-        <Home id="home" />
+        <Home />
+
 
         <div className="flex flex-col justify-center gap-7">
           <About />
