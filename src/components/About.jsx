@@ -12,7 +12,7 @@ function About() {
           initial={{ width: 0, opacity: 0.5 }}
           whileInView={{ width: "100%", opacity: 1 }}
           transition={{ type: "tween", duration: 1.5 }}
-          viewport={{ margin: "0px 0px -25% 0px", once: true }}
+          viewport={{ margin: "0px 0px -20% 0px", once: true }}
           className="border-b-2 border-gray-400 mb-6"
         />
 
@@ -43,7 +43,7 @@ function About() {
             initial={{ width: 0, opacity: 0.5 }}
             whileInView={{ width: "100%", opacity: 1 }}
             transition={{ type: "tween", duration: 1.5 }}
-            viewport={{ margin: "0px 0px -25% 0px", once: true }}
+            viewport={{ margin: "0px 0px -20% 0px", once: true }}
             className="border-b-2 border-gray-400 mb-6"
           />
 

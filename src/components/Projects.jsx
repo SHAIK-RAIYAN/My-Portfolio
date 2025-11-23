@@ -85,7 +85,7 @@ function Projects() {
             initial={{ width: 0, opacity: 0.5 }}
             whileInView={{ width: "100%", opacity: 1 }}
             transition={{ type: "tween", duration: 1.5 }}
-            viewport={{ margin: "0px 0px -25% 0px", once: true }}
+            viewport={{ margin: "0px 0px -5% 0px", once: true }}
             className="border-b-2 border-gray-400 pt-3 mb-3"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -139,7 +139,7 @@ function Projects() {
             initial={{ width: 0, opacity: 0.5 }}
             whileInView={{ width: "100%", opacity: 1 }}
             transition={{ type: "tween", duration: 1.5 }}
-            viewport={{ margin: "0px 0px -25% 0px", once: true }}
+            viewport={{ margin: "0px 0px -5% 0px", once: true }}
             className="border-b-2 border-gray-400 pt-3 mb-3"
           />
           {/* projects */}
