@@ -77,7 +77,9 @@ function App() {
 
         <div className="flex flex-col justify-center gap-7">
           <About />
-          <Github />
+          <div className="hidden md:block">
+            <Github />
+          </div>
           <SkillSet />
         </div>
 

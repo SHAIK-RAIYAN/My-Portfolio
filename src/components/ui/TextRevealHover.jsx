@@ -29,7 +29,7 @@ function TextRevealHover({
         });
 
         tl.to(split.chars, {
-          yPercent: -50,
+          yPercent: -100, //in production 100 is correct
           stagger: { amount: 0.3 },
         });
 
