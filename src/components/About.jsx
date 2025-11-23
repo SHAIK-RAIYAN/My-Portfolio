@@ -6,7 +6,8 @@ function About() {
   return (
     <div className="mx-auto py-2" id="about">
       <div className="px-4 py-8">
-        <WordAppear word={"About Me"} className="text-3xl text-white" />
+        <WordAppear word={"About"} className="text-lg text-neutral-500" />
+        <WordAppear word={"Me"} className="text-3xl text-white" />
         <motion.div
           initial={{ width: 0, opacity: 0.5 }}
           whileInView={{ width: "100%", opacity: 1 }}

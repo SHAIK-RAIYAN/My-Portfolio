@@ -5,10 +5,8 @@ import PressureText from "./ui/PressureText";
 
 function Contact() {
   return (
-    <div
-      className="flex flex-col justify-center items-center md:flex-row "
-      id="contact">
-      <div className="w-full flex justify-center items-center border-t md:border-t-0  border-gray-300 px-6 py-6">
+    <div className="flex flex-col justify-center items-center" id="contact">
+      <div className="w-full flex justify-center items-center border-t md:border-t-0  border-gray-300 py-6 mb-5 ">
         <div className="w-full max-w-md flex flex-col justify-center items-center text-center gap-3">
           <PressureText
             text="Get In Touch!"
@@ -53,6 +51,7 @@ function Contact() {
       </div>
 
       <ContactForm />
+
       <Tooltip
         id="main-tooltip"
         place="top"

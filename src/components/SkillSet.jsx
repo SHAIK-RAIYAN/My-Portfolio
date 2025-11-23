@@ -31,7 +31,9 @@ function SkillSet() {
     <div className="relative" id="skills">
       <div className="relative mt-10 mx-auto pb-40 z-10 py-4" id="skills">
         <div className="px-4 py-8">
-          <div className="text-3xl text-white">My Skills</div>
+          <div className="text-3xl text-white">
+            <p className="text-2xl text-neutral-500">My</p> <p>Skills</p>
+          </div>
           <motion.div
             initial={{ width: 0, opacity: 0.5 }}
             whileInView={{ width: "100%", opacity: 1 }}

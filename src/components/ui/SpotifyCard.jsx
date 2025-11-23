@@ -31,8 +31,8 @@ export default function SpotifyCard() {
     <motion.div
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
-      transition={{ duration: 0.75 }}
-      className="w-full md:w-auto flex items-center gap-4 bg-black border border-neutral-700 rounded-xl p-3 hover:bg-neutral-950">
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="overflow-hidden whitespace-nowrap md:w-auto flex items-center gap-4 bg-black border border-neutral-700 rounded-xl p-3 hover:bg-neutral-950">
       <div className="relative w-14 h-14 flex-shrink-0">
         <img
           src={data.albumImageUrl}

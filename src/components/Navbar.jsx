@@ -1,28 +1,21 @@
 import { motion } from "framer-motion";
+import { useLenis } from "lenis/react"; // 1. Import the hook
 import GlassNavbar from "./ui/GlassNavbar";
 
 function Navbar() {
+  const lenis = useLenis();
+
   const handleNavClick = (e) => {
     e.preventDefault();
-    const href =
-      e.currentTarget.getAttribute("href") ||
-      e.target?.closest?.("[href]")?.getAttribute("href");
-    if (!href) return;
-    const id = href.replace("#", "");
-    const target = document.getElementById(id);
-    if (!target) return;
-    const navEl = document.getElementById("site-navbar");
-    const navHeight = navEl ? navEl.getBoundingClientRect().height : 0;
-    const top = Math.max(
-      0,
-      target.getBoundingClientRect().top + window.scrollY - navHeight - 8
-    );
-    if (window.lenis && typeof window.lenis.scrollTo === "function") {
-      window.lenis.scrollTo(top);
-    } else {
-      window.scrollTo({ top, behavior: "smooth" });
-    }
-    history.replaceState(null, "", `#${id}`);
+
+    const targetId = e.currentTarget.getAttribute("href");
+    if (!targetId) return;
+
+    lenis?.scrollTo(targetId, {
+      offset: -100, //top spacing
+      duration: 2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
   };
 
   return (
@@ -31,7 +24,7 @@ function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", delay: 1 }}
-        className="fixed top-0 w-full flex justify-start z-40 mt-8">
+        className="fixed top-0 flex justify-start z-40 mt-8">
         <a href="#home" onClick={handleNavClick} className="ml-3 md:ml-5">
           <img
             src="/founder2.jpg"
@@ -39,6 +32,7 @@ function Navbar() {
             className="h-13 w-13 object-cover p-1 rounded-2xl border border-neutral-500 hover:scale-98 active:scale-95 cursor-pointer"
           />
         </a>
+
         <GlassNavbar
           id="site-navbar"
           width={"fit"}
@@ -81,5 +75,4 @@ function Navbar() {
     </div>
   );
 }
-
 export default Navbar;

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { cn } from "../utils/accernity";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import { cn } from "../utils/accernity";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -83,8 +83,8 @@ export function ContactForm() {
   const inputsDisabled = loading || sent;
 
   return (
-    <div className="shadow-input mx-auto w-full max-w-md rounded-none border border-gray-700 bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
-      <h1 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 text-center">
+    <div className="shadow-input mx-auto w-full rounded-none border-t border-b border-neutral-600 border-dashed  p-4 md:p-8 ">
+      <h1 className="text-xl md:text-2xl font-bold font-mono text-neutral-300 text-center">
         Contact Me
       </h1>
 
@@ -147,7 +147,7 @@ export function ContactForm() {
             onChange={handleChange}
             disabled={inputsDisabled}
             className={cn(
-              `shadow-input dark:placeholder-text-neutral-600 flex h-28 w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600`
+              `placeholder-text-neutral-600 flex h-28 w-full rounded-md border-none  px-3 py-2 text-sm  transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px]  focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 bg-zinc-800 text-white shadow-[0px_0px_1px_1px_#404040] focus-visible:ring-neutral-600`
             )}
           />
         </LabelInputContainer>
@@ -155,7 +155,7 @@ export function ContactForm() {
         {error && <p className="mb-4 text-red-500 text-sm">{error}</p>}
 
         <button
-          className="group/btn relative flex items-center justify-center gap-2 h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="group/btn relative flex items-center justify-center gap-2 h-10 w-full rounded-md bg-gradient-to-br font-medium text-white  bg-zinc-800 from-zinc-900 to-zinc-900 shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
           disabled={inputsDisabled}>
           {loading && (
@@ -184,7 +184,7 @@ export function ContactForm() {
           {!inputsDisabled && <BottomGradient />}
         </button>
 
-        <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+        <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparen to-transparent via-neutral-700" />
       </form>
     </div>
   );

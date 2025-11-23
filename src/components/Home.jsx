@@ -21,7 +21,7 @@ function Home() {
       <motion.div
         initial={{ opacity: 0, x: "-80%" }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ type: "spring", delay: 1.2, damping: 25 }}>
+        transition={{ type: "spring", delay: 1, damping: 25 }}>
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.02 }}
@@ -41,7 +41,7 @@ function Home() {
           <motion.div
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "easeInOut", delay: 1, duration: 0.5 }}>
+            transition={{ type: "easeInOut", delay: 1.3, duration: 0.5 }}>
             <h2 className="text-[#e5e7eb] text-4xl lg:text-6xl py-4 relative font-normal z-20 tracking-tight">
               Hi, I'm{" "}
               <div className="relative inline-block">
@@ -64,7 +64,7 @@ function Home() {
           <motion.div
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "easeInOut", delay: 1, duration: 0.5 }}
+            transition={{ type: "easeInOut", delay: 1.5, duration: 0.5 }}
             className="font-pixel flex justify-start gap-2 text-4xl md:text-5xl text-[#868686] md:gap-4 whitespace-normal w-auto max-w-full">
             <Typewriter
               options={{
@@ -82,14 +82,14 @@ function Home() {
           <motion.div
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "easeInOut", duration: 0.5, delay: 1.5 }}
+            transition={{ type: "easeInOut", duration: 0.5, delay: 1.7 }}
             className="py-5">
             <p className="text-gray-400 text-sm md:text-lg font-normal w-full">
               I’m a curious full-stack developer who loves turning ideas into
               smooth, scalable, and fun digital experiences powered by the MERN
               stack, SQL, and Java—with a growing edge in DSA.
             </p>
-            <span className="text-white text-lg md:text-xl flex justify-center items-center md:justify-start gap-4 pt-3">
+            <span className="text-white text-lg md:text-xl flex items-center justify-start gap-4 pt-3 flex-wrap">
               <a
                 href="https://github.com/SHAIK-RAIYAN/"
                 target="_blank"
@@ -119,10 +119,12 @@ function Home() {
                   <span className="font-normal text-neutral-300">Resume</span>
                 </HoverBorderGradient>
               </a>
+              <div className="flex-1">
+                <SpotifyCard />
+              </div>
             </span>
           </motion.div>
         </div>
-        <SpotifyCard />
       </div>
 
       <Tooltip

@@ -35,7 +35,7 @@ const TimePolice = () => {
   if (!displayData) return null;
 
   return (
-    <div className="w-full border border-neutral-600 mt-4 p-2 md:p-5 rounded-2xl">
+    <div className="w-full border border-neutral-600  p-2 md:p-5 rounded-2xl">
       <div className="flex items-start justify-between gap-4">
         <div>
           <h3 className="text-neutral-200 text-lg md:text-2xl mb-1 font-pixel">

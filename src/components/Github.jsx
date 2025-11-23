@@ -28,7 +28,7 @@ function Github() {
         initial={{ width: 0, opacity: 0.5 }}
         whileInView={{ width: "100%", opacity: 1 }}
         transition={{ type: "tween", duration: 1.5 }}
-        viewport={{ margin: "0px 0px -25% 0px"}}
+        viewport={{ margin: "0px 0px -25% 0px", once: true }}
         className="border-b-2 border-gray-400 pt-3 mb-3"
       />
       <a
