@@ -1,30 +1,31 @@
-import { getSession, setSession, STORAGE_KEYS } from "../utils/storageUtils"; // Now this import works because both are in 'src'
+import {
+  getLocalData,
+  setLocalData,
+  STORAGE_KEYS,
+} from "../utils/storageUtils.js";
 
 export const fetchLocationData = async () => {
-  // 1. CHECK UTILS
-  const cached = getSession(STORAGE_KEYS.LOCATION);
+  const cached = getLocalData(STORAGE_KEYS.LOCATION);
 
   if (cached) {
     return cached;
   }
 
   try {
-    // CHANGE THIS LINE: Call your own backend
     const res = await fetch("/api/location");
 
     if (!res.ok) throw new Error("Internal API Request Failed");
 
     const data = await res.json();
 
-    // ... rest of the logic (payload, setSession) remains exactly the same
     const payload = {
       city: data.city,
       timezone: data.timezone,
       country: data.country_name,
       isp: data.org,
     };
+    setLocalData(STORAGE_KEYS.LOCATION, payload, 2);
 
-    setSession(STORAGE_KEYS.LOCATION, payload);
     return payload;
   } catch (error) {
     console.error(error);

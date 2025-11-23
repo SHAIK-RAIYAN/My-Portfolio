@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const FORCE_MOCK = true;
+  const FORCE_MOCK = false;
 
   if (FORCE_MOCK) {
     return res.status(200).json({
