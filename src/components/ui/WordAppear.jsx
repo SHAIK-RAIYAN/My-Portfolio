@@ -30,7 +30,7 @@ function WordAppear({ word, className = "" }) {
             trigger: h1Ref.current,
             start: "top 90%",
             end: "top 70%",
-            markers: true,
+            markers: false,
             scrub: 1,
             once: true,
           },
