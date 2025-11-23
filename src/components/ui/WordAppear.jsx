@@ -32,6 +32,7 @@ function WordAppear({ word, className = "" }) {
             end: "top 70%",
             markers: true,
             scrub: 1,
+            once: true,
           },
         });
       }, h1Ref);
