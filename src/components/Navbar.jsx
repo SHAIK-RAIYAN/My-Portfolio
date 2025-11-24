@@ -38,7 +38,7 @@ function Navbar() {
           width={"fit"}
           height={"fit"}
           borderRadius={24}
-          className="text-white font-light text-lg gap-8 p-3 mx-3">
+          className="text-white font-light text-sm md:text-lg gap-8 md:p-3 mx-3">
           <a
             href="#about"
             onClick={handleNavClick}
