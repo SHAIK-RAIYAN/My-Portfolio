@@ -91,7 +91,7 @@ function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {MajorProjects.map((project, index) => (
               <CardContainer key={index} className="inter-var w-full">
-                <CardBody className="relative group/card hover:shadow-2xl hover:shadow-rose-500/[0.1] bg-black  border-black/[0.1] w-full h-auto rounded-xl p-2 border">
+                <CardBody className="relative group/card hover:shadow-2xl hover:shadow-rose-500/[0.1] bg-black  border-neutral-600 w-full h-auto rounded-xl p-2 border">
                   <CardItem translateZ="20" className="w-full p-2">
                     <img
                       src={project.imgSrc}

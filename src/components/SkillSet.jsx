@@ -56,7 +56,7 @@ function SkillSet() {
                       src={`/skills/${skill.name}.svg`}
                       alt={skill.name}
                       width={20}
-                      className="size-18"
+                      className="size-10 md:size-18 pointer-events-none md:pointer-events-auto"
                     />
                   </div>
                 </div>

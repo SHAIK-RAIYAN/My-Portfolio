@@ -7,7 +7,7 @@ function Contact() {
   return (
     <div className="flex flex-col justify-center items-center" id="contact">
       <div className="w-full flex justify-center items-center border-t md:border-t-0  border-gray-300 py-6 mb-5 ">
-        <div className="w-full max-w-md flex flex-col justify-center items-center text-center gap-3">
+        <div className="w-full max-w-md flex flex-col justify-center items-center text-center gap-3 px-1">
           <PressureText
             text="Get In Touch!"
             flex={true}
@@ -18,7 +18,7 @@ function Contact() {
             italic={true}
             textColor="#FFF"
             strokeColor="#ff0000"
-            minFontSize={30}
+            minFontSize={25}
           />
           <p className="text-gray-500 text-sm md:text-base mt-2">
             I am always open to discussing new projects, creative ideas, or
