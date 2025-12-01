@@ -34,7 +34,7 @@ function Github() {
       <motion.a
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
-        transition={{ type: "tween", duration: 1 }}
+        transition={{ type: "tween", duration: 0.5 }}
         viewport={{ margin: "0px 0px -15% 0px", once: true }}
         href="https://github.com/SHAIK-RAIYAN"
         target="_blank"

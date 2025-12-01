@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <motion.div
-      className="flex flex-col justify-center gap-10 text-white h-screen md:mt-10 overflow-hidden"
+      className="flex flex-col justify-center gap-10 text-white h-screen mt-5 npm md:mt-10 overflow-hidden"
       id="home">
       <motion.div
         initial={{ opacity: 0, x: "-80%" }}
