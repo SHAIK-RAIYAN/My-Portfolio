@@ -1,22 +1,16 @@
-import { Player } from "@lordicon/react";
+// eslint-disable-next-line
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoDocumentTextOutline } from "react-icons/io5";
 import { Tooltip } from "react-tooltip";
 import Typewriter from "typewriter-effect";
-import docIcon from "./../assets/icons/document.json";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import SpotifyCard from "./ui/SpotifyCard";
 
 function Home() {
-  const playerRef = useRef(null);
-  const handleHover = () => {
-    playerRef.current?.playFromBeginning();
-  };
-
   return (
     <motion.div
-      className="flex flex-col justify-center gap-10 text-white h-screen mt-5 npm md:mt-10 overflow-hidden"
+      className="flex flex-col justify-center gap-10 text-white h-screen mt-10 overflow-hidden"
       id="home">
       <motion.div
         initial={{ opacity: 0, x: "-80%" }}
@@ -109,13 +103,12 @@ function Home() {
                 href="/resume/SHAIK RAIYAN.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                onMouseEnter={handleHover}
-                className="active:scale-97">
+                className="group active:scale-97">
                 <HoverBorderGradient
                   containerClassName="rounded-full "
                   as="button"
-                  className="text-white flex items-center space-x-2 text-sm ">
-                  <Player ref={playerRef} icon={docIcon} size={24} />
+                  className="text-white flex items-center space-x-1 text-sm ">
+                  <IoDocumentTextOutline className="text-neutral-300 transition-transform duration-1500  group-hover:scale-110 group-hover:text-white group-hover:rotate-y-360 group-hover:-rotate-z-360" />
                   <span className="font-normal text-neutral-300">Resume</span>
                 </HoverBorderGradient>
               </a>

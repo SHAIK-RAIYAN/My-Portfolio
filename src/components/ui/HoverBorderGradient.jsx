@@ -1,6 +1,5 @@
-"use client";
-import { useState, useEffect } from "react";
-
+import { useEffect, useState } from "react";
+// eslint-disable-next-line
 import { motion } from "framer-motion";
 import { cn } from "./../../utils/accernity";
 
@@ -8,7 +7,7 @@ export function HoverBorderGradient({
   children,
   containerClassName,
   className,
-  as: Tag = "button",
+
   duration = 1,
   clockwise = true,
   ...props
@@ -46,8 +45,8 @@ export function HoverBorderGradient({
     }
   }, [hovered]);
   return (
-    <Tag
-      onMouseEnter={(event) => {
+    <button
+      onMouseEnter={() => {
         setHovered(true);
       }}
       onMouseLeave={() => setHovered(false)}
@@ -82,6 +81,6 @@ export function HoverBorderGradient({
         transition={{ ease: "linear", duration: duration ?? 1 }}
       />
       <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
-    </Tag>
+    </button>
   );
 }

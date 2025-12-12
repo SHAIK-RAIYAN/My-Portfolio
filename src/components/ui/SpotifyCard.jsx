@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CiShare1 } from "react-icons/ci";

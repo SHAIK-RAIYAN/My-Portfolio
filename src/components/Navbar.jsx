@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { motion } from "framer-motion";
 import { useLenis } from "lenis/react"; // 1. Import the hook
 import GlassNavbar from "./ui/GlassNavbar";

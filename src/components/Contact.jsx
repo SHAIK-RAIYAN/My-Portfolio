@@ -6,7 +6,7 @@ import PressureText from "./ui/PressureText";
 function Contact() {
   return (
     <div className="flex flex-col justify-center items-center" id="contact">
-      <div className="w-full flex justify-center items-center border-t md:border-t-0  border-gray-300 py-6 mb-5 ">
+      <div className=" rounded-4xl w-full flex justify-center items-center py-6 mb-5 ">
         <div className="w-full max-w-md flex flex-col justify-center items-center text-center gap-3 px-1">
           <PressureText
             text="Get In Touch!"
@@ -18,7 +18,7 @@ function Contact() {
             italic={true}
             textColor="#FFF"
             strokeColor="#ff0000"
-            minFontSize={25}
+            minFontSize={28}
           />
           <p className="text-gray-500 text-sm md:text-base mt-2">
             I am always open to discussing new projects, creative ideas, or
@@ -30,21 +30,21 @@ function Contact() {
               target="_blank"
               data-tooltip-id="main-tooltip"
               data-tooltip-content="Whatsapp">
-              <FaWhatsapp className="hover:text-green-500 transition" />
+              <FaWhatsapp className="hover:text-green-400 transition" />
             </a>
             <a
               href="https://instagram.com/_sk_raiyan_"
               target="_blank"
               data-tooltip-id="main-tooltip"
               data-tooltip-content="Instagram">
-              <FaInstagram className="hover:text-pink-500 transition" />
+              <FaInstagram className="hover:text-pink-400 transition" />
             </a>
             <a
               href="https://linkedin.com/in/shaik-raiyan"
               target="_blank"
               data-tooltip-id="main-tooltip"
               data-tooltip-content="LinkedIn">
-              <FaLinkedin className="hover:text-blue-600 transition" />
+              <FaLinkedin className="hover:text-blue-400 transition" />
             </a>
           </div>
         </div>

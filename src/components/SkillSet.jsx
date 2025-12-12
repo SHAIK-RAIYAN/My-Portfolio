@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { motion } from "framer-motion";
 import { Tooltip } from "react-tooltip";
 import Magnet from "./ui/magnet";
@@ -43,7 +44,7 @@ function SkillSet() {
           />
 
           <div>
-            {skills.map((skill) => (
+            {skills.map((skill, index) => (
               <Magnet key={skill.name} disabled={false} magnetStrength={10}>
                 <div className="px-4">
                   <div
@@ -51,6 +52,15 @@ function SkillSet() {
                     data-tooltip-id="main-tooltip"
                     data-tooltip-content={skill.name}>
                     <motion.img
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        delay: index * 0.1,
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                      }}
+                      viewport={{ margin: "0px 0px -15% 0px", once: true }}
                       drag
                       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                       src={`/skills/${skill.name}.svg`}

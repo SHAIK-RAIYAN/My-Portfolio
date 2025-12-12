@@ -1,4 +1,5 @@
-import { motion } from "motion/react"; // Keep for the line separator only
+// eslint-disable-next-line
+import { motion } from "framer-motion";
 import TextAppear from "./ui/TextAppear";
 import WordAppear from "./ui/WordAppear";
 

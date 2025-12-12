@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
@@ -32,9 +33,14 @@ function Github() {
         className="border-b-2 border-gray-400 pt-3 mb-3"
       />
       <motion.a
-        initial={{ width: 0 }}
-        whileInView={{ width: "100%" }}
-        transition={{ type: "tween", duration: 0.5 }}
+        initial={{ opacity: 0, y: 40, scale: 0.8 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 70,
+          damping: 15,
+          mass: 1.2,
+        }}
         viewport={{ margin: "0px 0px -15% 0px", once: true }}
         href="https://github.com/SHAIK-RAIYAN"
         target="_blank"
