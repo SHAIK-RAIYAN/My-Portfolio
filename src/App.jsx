@@ -1,9 +1,8 @@
-import { Player } from "@lordicon/react";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import "lenis/dist/lenis.css";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { FaTowerBroadcast } from "react-icons/fa6";
 import "./App.css";
-import location_icon from "./assets/icons/wireless-loop.json";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -13,13 +12,16 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import SkillSet from "./components/SkillSet";
 import TimePolice from "./components/ui/TimePolice";
+import { fetchLocationData } from "./services/locationService";
 
 function App() {
   const scrollYProgress = useScroll().scrollYProgress;
+  useEffect(() => {
+    fetchLocationData();
+  }, []);
   const [isLocationOpen, setIsLocationOpen] = useState(false);
-  const playerRef = useRef(null);
+
   const handleToggle = () => {
-    playerRef.current?.playFromBeginning();
     setIsLocationOpen(!isLocationOpen);
   };
 
@@ -39,15 +41,15 @@ function App() {
         <div className="hidden md:flex flex-col items-end fixed top-5 right-5 z-[60]">
           <div
             onClick={handleToggle}
-            className={`text-white border border-neutral-800 p-1 rounded-full 
+            className={`group text-white border border-neutral-800 p-3 rounded-full 
               cursor-pointer transition-transform duration-100 ease-in-out active:scale-90 
               ${
                 isLocationOpen
                   ? "bg-neutral-800 border-neutral-600"
-                  : "bg-black/20 backdrop-blur-sm hover:bg-neutral-900"
+                  : "bg-black/20 backdrop-blur-sm hover:bg-neutral-950"
               }`}>
             <div className="pointer-events-none">
-              <Player ref={playerRef} icon={location_icon} size={30} />
+              <FaTowerBroadcast className="scale-130 text-neutral-300 transition-transform duration-500 group-hover:rotate-y-360" />
             </div>
           </div>
 
