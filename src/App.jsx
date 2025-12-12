@@ -22,6 +22,9 @@ function App() {
   const [isLocationOpen, setIsLocationOpen] = useState(false);
 
   const handleToggle = () => {
+    if (!isLocationOpen) {
+      fetchLocationData();
+    }
     setIsLocationOpen(!isLocationOpen);
   };
 

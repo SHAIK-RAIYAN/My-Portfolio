@@ -39,7 +39,7 @@ const TimePolice = () => {
       <div className="flex items-start justify-between gap-4">
         <div>
           <h3 className="text-neutral-200 text-lg md:text-2xl mb-1 font-pixel">
-            It is {displayData.time} in {displayData.city}.
+            It is {displayData.time}.
           </h3>
           <p className="text-sm font-medium text-neutral-500 font-mono">
             {displayData.text}
