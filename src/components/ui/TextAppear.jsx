@@ -41,7 +41,7 @@ export default function TextAppear({ children, className = "" }) {
           scrollTrigger: {
             trigger: container,
             start: "top 80%",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
           },
         });
       };
