@@ -9,7 +9,9 @@ function Footer() {
           Design & Developed by{" "}
           <span className="text-neutral-400 font-semibold">Shaik Raiyan</span>
         </p>
-        <p className="text-sm">&copy; 2025. All rights reserved.</p>
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} . All rights reserved.
+        </p>
       </div>
     </div>
   );
