@@ -37,11 +37,11 @@ I engineer production-grade full-stack solutions with a focus on performance, ac
 
 | Project                                | Description & Tech Stack                                                                                                                                                                                                                                         |
 | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **WanderNest**<br>_Travel Marketplace_ | **Full-stack property listing platform.** Engineered owner registration workflows, booking availability logic, and a review system with relational data mapping.<br><br>![Stack](https://img.shields.io/badge/Stack-Node_Express_MongoDB-blue?style=flat-square) |
-| **TripSage**<br>_AI Trip Planner_      | **Intelligent itinerary generator.** Integrated Google Gemini AI to generate markdown-based travel plans with real-time chat and session persistence.<br><br>![Stack](https://img.shields.io/badge/Stack-Gemini_AI_Socket.IO_React-purple?style=flat-square)     |
-| **Pulsevo**<br>_Analytics Dashboard_   | **Productivity & NL Query Interface.** Developed predictive anomaly detection and natural language querying for team metrics.<br><br>![Stack](https://img.shields.io/badge/Stack-React_Flask_SQLite-orange?style=flat-square)                                    |
+| [**WanderNest**](https://thewandernest.vercel.app/listings)<br>_Travel Marketplace_ | **Full-stack property listing platform.** Engineered owner registration workflows, booking availability logic, and a review system with relational data mapping.<br><br>![Stack](https://img.shields.io/badge/Stack-Node_Express_MongoDB-blue?style=flat-square) |
+| [**TripSage**](https://planwithtripsage.vercel.app/plan-trip)<br>_AI Trip Planner_      | **Intelligent itinerary generator.** Integrated Google Gemini AI to generate markdown-based travel plans with real-time chat and session persistence.<br><br>![Stack](https://img.shields.io/badge/Stack-Gemini_AI_Socket.IO_React-purple?style=flat-square)     |
+                                 
 
----
+
 
 ---
 
@@ -49,8 +49,8 @@ I engineer production-grade full-stack solutions with a focus on performance, ac
 
 **Ready to deploy impactful solutions.**
 
-[LinkedIn](https://linkedin.com/in/shaik-raiyan) • [GitHub](https://github.com/SHAIK-RAIYAN) • [Portfolio](https://shaik-raiyan.vercel.app/)
+[LinkedIn](https://linkedin.com/in/shaik-raiyan) • [GitHub](https://github.com/SHAIK-RAIYAN) • [Portfolio](http://shaikraiyan.me/)
 
 ```
 
-```
+
