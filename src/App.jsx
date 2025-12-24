@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import "lenis/dist/lenis.css";
 import { useEffect, useState } from "react";
