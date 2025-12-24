@@ -33,22 +33,23 @@ export default function SpotifyCard() {
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="overflow-hidden whitespace-nowrap md:w-auto flex items-center gap-4 bg-black border border-neutral-700 rounded-xl p-3 hover:bg-neutral-950">
-      <div className="relative w-14 h-14 flex-shrink-0">
+      className="flex items-center gap-4 overflow-hidden rounded-xl border border-neutral-700 bg-black p-3 whitespace-nowrap hover:bg-neutral-950 md:w-auto"
+    >
+      <div className="relative h-14 w-14 flex-shrink-0">
         <img
           src={data.albumImageUrl}
           alt={data.album}
-          className="w-full h-full object-cover rounded-md shadow-lg group-hover:opacity-80 transition-opacity"
+          className="h-full w-full rounded-md object-cover shadow-lg transition-opacity group-hover:opacity-80"
         />
       </div>
 
-      <div className="flex-1 min-w-0 flex flex-col justify-center">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-sm text-neutral-500 uppercase tracking-widest flex items-center gap-1">
+      <div className="flex min-w-0 flex-1 flex-col justify-center">
+        <div className="mb-1 flex items-center gap-2">
+          <span className="flex items-center gap-1 text-sm tracking-widest text-neutral-500 uppercase">
             {data.isPlaying ? (
               <>
                 <FaSpotify size={10} className="text-green-400" />
-                <span className="w-1.5 h-1.5 bg-[#1db954] rounded-full animate-pulse" />
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#1db954]" />
                 Currently Playing
               </>
             ) : (
@@ -59,16 +60,16 @@ export default function SpotifyCard() {
             )}
           </span>
         </div>
-        <h3 className="text-gray-100 text-sm truncate max-w-[180px]">
+        <h3 className="max-w-[180px] truncate text-sm text-gray-100">
           {data.title}
         </h3>
-        <p className="text-neutral-500 font-light text-sm truncate max-w-[180px]">
+        <p className="max-w-[180px] truncate text-sm font-light text-neutral-500">
           {data.artist}
         </p>
       </div>
 
       <a href={data.songUrl} target="_blank" rel="noopener noreferrer">
-        <div className="text-neutral-300 mr-2 transition-colors border border-neutral-800 hover:bg-neutral-900 rounded-lg flex justify-center items-center p-2">
+        <div className="mr-2 flex items-center justify-center rounded-lg border border-neutral-800 p-2 text-neutral-300 transition-colors hover:bg-neutral-900">
           {data.isPlaying ? <FaPause size={12} /> : <CiShare1 size={12} />}
         </div>
       </a>

@@ -8,25 +8,26 @@ export function ProjectCard({ project }) {
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ ease: "anticipate", duration: 1 }}
       viewport={{ once: true, margin: "-70px" }}
-      className="group relative flex flex-col h-full bg-neutral-900/50 border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-600 transition-colors duration-300">
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900/50 transition-colors duration-300 hover:border-neutral-600"
+    >
       {/* Image Section */}
       <div className="relative h-48 w-full overflow-hidden bg-neutral-950">
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent z-10 opacity-60 group-hover:from-neutral-900/50 group-hover:to-transparent" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-neutral-900 to-transparent opacity-60 group-hover:from-neutral-900/50 group-hover:to-transparent" />
         <img
           src={project.imgSrc}
           alt={project.title}
-          className="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="h-full w-full transform object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-col flex-grow p-6 z-20">
-        <div className="flex justify-between items-start mb-4">
-          <div className="relative group w-fit">
-            <h3 className="text-xl font-bold text-white mb-1">
+      <div className="z-20 flex flex-grow flex-col p-6">
+        <div className="mb-4 flex items-start justify-between">
+          <div className="group relative w-fit">
+            <h3 className="mb-1 text-xl font-bold text-white">
               {project.title}
             </h3>
-            <span className="absolute bottom-1 left-0 w-full h-[1px] bg-neutral-300 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+            <span className="absolute bottom-1 left-0 h-[1px] w-full origin-left scale-x-0 bg-neutral-300 transition-transform duration-300 group-hover:scale-x-100" />
           </div>
 
           {/* Icon Links */}
@@ -36,8 +37,9 @@ export function ProjectCard({ project }) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-neutral-800 rounded-full text-neutral-400 hover:bg-neutral-700 hover:text-white transition-colors"
-                aria-label="View Source Code">
+                className="rounded-full bg-neutral-800 p-2 text-neutral-400 transition-colors hover:bg-neutral-700 hover:text-white"
+                aria-label="View Source Code"
+              >
                 <FiGithub size={18} />
               </a>
             )}
@@ -45,24 +47,25 @@ export function ProjectCard({ project }) {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-neutral-800 rounded-full text-neutral-400 hover:bg-neutral-700 hover:text-white transition-colors"
-              aria-label="View Live Project">
+              className="rounded-full bg-neutral-800 p-2 text-neutral-400 transition-colors hover:bg-neutral-700 hover:text-white"
+              aria-label="View Live Project"
+            >
               <FiGlobe size={18} />
             </a>
           </div>
         </div>
 
-        <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-grow">
+        <p className="mb-6 flex-grow text-sm leading-relaxed text-neutral-400">
           {project.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="mt-auto pt-4 border-t border-neutral-800 flex items-center justify-between">
+        <div className="mt-auto flex items-center justify-between border-t border-neutral-800 pt-4">
           <div className="flex items-center gap-2">
             <FiLayers size={16} className="text-neutral-500" />
-            <div className="flex gap-2 flex-wrap text-xs text-neutral-300 font-mono">
+            <div className="flex flex-wrap gap-2 font-mono text-xs text-neutral-300">
               {project.techStack?.map((tech, i) => (
-                <span key={i} className="bg-neutral-800 px-2 py-1 rounded">
+                <span key={i} className="rounded bg-neutral-800 px-2 py-1">
                   {tech}
                 </span>
               ))}

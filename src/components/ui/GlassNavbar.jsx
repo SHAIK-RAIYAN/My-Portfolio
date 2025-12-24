@@ -70,10 +70,10 @@ const GlassNavbar = ({
         <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" rx="${borderRadius}" fill="url(#red-grad)" />
         <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" rx="${borderRadius}" fill="url(#blue-grad)" style="mix-blend-mode: ${mixBlendMode}" />
         <rect x="${edgeSize}" y="${edgeSize}" width="${
-      actualWidth - edgeSize * 2
-    }" height="${
-      actualHeight - edgeSize * 2
-    }" rx="${borderRadius}" fill="hsl(0 0% ${brightness}% / ${opacity})" style="filter:blur(${blur}px)" />
+          actualWidth - edgeSize * 2
+        }" height="${
+          actualHeight - edgeSize * 2
+        }" rx="${borderRadius}" fill="hsl(0 0% ${brightness}% / ${opacity})" style="filter:blur(${blur}px)" />
       </svg>
     `;
 
@@ -94,7 +94,7 @@ const GlassNavbar = ({
       if (ref.current) {
         ref.current.setAttribute(
           "scale",
-          (distortionScale + offset).toString()
+          (distortionScale + offset).toString(),
         );
         ref.current.setAttribute("xChannelSelector", xChannel);
         ref.current.setAttribute("yChannelSelector", yChannel);
@@ -271,10 +271,12 @@ const GlassNavbar = ({
     <div
       ref={containerRef}
       className={`${glassSurfaceClasses} ${focusVisibleClasses} ${className} px-5`}
-      style={getContainerStyles()}>
+      style={getContainerStyles()}
+    >
       <svg
-        className="w-full h-full pointer-events-none absolute inset-0 opacity-0 -z-10"
-        xmlns="http://www.w3.org/2000/svg">
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-0"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
           <filter
             id="glass-filter"
@@ -282,7 +284,8 @@ const GlassNavbar = ({
             x="0%"
             y="0%"
             width="100%"
-            height="100%">
+            height="100%"
+          >
             <feImage
               ref={feImageRef}
               x="0"
@@ -355,7 +358,7 @@ const GlassNavbar = ({
         </defs>
       </svg>
 
-      <div className="w-fit h-fit flex items-center justify-center  rounded-[inherit] relative z-10 gap-2 ">
+      <div className="relative z-10 flex h-fit w-fit items-center justify-center gap-2 rounded-[inherit]">
         {children}
       </div>
     </div>

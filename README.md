@@ -28,31 +28,29 @@
 
 I engineer production-grade full-stack solutions with a focus on performance, accessibility, and scalability. My expertise lies in the MERN stack and Java, delivering clean logic for backends and intuitive, responsive interfaces for frontends.
 
-* **Education:** B.Tech CSE (AIML) @ Kalasalingam Academy of Research and Education (CGPA: 9.08)
-* **Core Competencies:** Full-Cycle Development, API Design, Database Optimization, UI/UX Implementation.
+- **Education:** B.Tech CSE (AIML) @ Kalasalingam Academy of Research and Education (CGPA: 9.08)
+- **Core Competencies:** Full-Cycle Development, API Design, Database Optimization, UI/UX Implementation.
 
 ---
 
 ## 🛠 Featured Projects
 
-| Project | Description & Tech Stack |
-| :--- | :--- |
+| Project                                | Description & Tech Stack                                                                                                                                                                                                                                         |
+| :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **WanderNest**<br>_Travel Marketplace_ | **Full-stack property listing platform.** Engineered owner registration workflows, booking availability logic, and a review system with relational data mapping.<br><br>![Stack](https://img.shields.io/badge/Stack-Node_Express_MongoDB-blue?style=flat-square) |
-| **TripSage**<br>_AI Trip Planner_ | **Intelligent itinerary generator.** Integrated Google Gemini AI to generate markdown-based travel plans with real-time chat and session persistence.<br><br>![Stack](https://img.shields.io/badge/Stack-Gemini_AI_Socket.IO_React-purple?style=flat-square) |
-| **Pulsevo**<br>_Analytics Dashboard_ | **Productivity & NL Query Interface.** Developed predictive anomaly detection and natural language querying for team metrics.<br><br>![Stack](https://img.shields.io/badge/Stack-React_Flask_SQLite-orange?style=flat-square) |
+| **TripSage**<br>_AI Trip Planner_      | **Intelligent itinerary generator.** Integrated Google Gemini AI to generate markdown-based travel plans with real-time chat and session persistence.<br><br>![Stack](https://img.shields.io/badge/Stack-Gemini_AI_Socket.IO_React-purple?style=flat-square)     |
+| **Pulsevo**<br>_Analytics Dashboard_   | **Productivity & NL Query Interface.** Developed predictive anomaly detection and natural language querying for team metrics.<br><br>![Stack](https://img.shields.io/badge/Stack-React_Flask_SQLite-orange?style=flat-square)                                    |
 
 ---
 
------
-
+---
 
 ## 📮 Contact
-
-
 
 **Ready to deploy impactful solutions.**
 
 [LinkedIn](https://linkedin.com/in/shaik-raiyan) • [GitHub](https://github.com/SHAIK-RAIYAN) • [Portfolio](https://shaik-raiyan.vercel.app/)
 
+```
 
 ```

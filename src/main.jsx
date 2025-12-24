@@ -9,5 +9,5 @@ createRoot(document.getElementById("root")).render(
     <ReactLenis root>
       <App />
     </ReactLenis>
-  </StrictMode>
+  </StrictMode>,
 );

@@ -30,7 +30,7 @@ function Github() {
         whileInView={{ width: "100%", opacity: 1 }}
         transition={{ type: "tween", duration: 1.5 }}
         viewport={{ margin: "0px 0px -20% 0px", once: true }}
-        className="border-b-2 border-gray-400 pt-3 mb-3"
+        className="mb-3 border-b-2 border-gray-400 pt-3"
       />
       <motion.a
         initial={{ opacity: 0, y: 40, scale: 0.8 }}
@@ -44,8 +44,9 @@ function Github() {
         viewport={{ margin: "0px 0px -15% 0px", once: true }}
         href="https://github.com/SHAIK-RAIYAN"
         target="_blank"
-        className="block mx-auto overflow-hidden">
-        <div className="bg-[rgb(8,10,13)] py-3 px-6 w-full mx-auto text-white rounded-lg flex justify-end items-center border border-dashed border-neutral-700">
+        className="mx-auto block overflow-hidden"
+      >
+        <div className="mx-auto flex w-full items-center justify-end rounded-lg border border-dashed border-neutral-700 bg-[rgb(8,10,13)] px-6 py-3 text-white">
           <GitHubCalendar
             colorScheme="dark"
             username="SHAIK-RAIYAN"

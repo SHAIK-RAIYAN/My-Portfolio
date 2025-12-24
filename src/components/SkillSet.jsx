@@ -30,7 +30,7 @@ function SkillSet() {
 
   return (
     <div className="relative" id="skills">
-      <div className="relative mt-10 mx-auto pb-40 z-10 py-4" id="skills">
+      <div className="relative z-10 mx-auto mt-10 py-4 pb-40" id="skills">
         <div className="px-4 py-8">
           <div className="text-3xl text-white">
             <p className="text-2xl text-neutral-500">My</p> <p>Skills</p>
@@ -40,7 +40,7 @@ function SkillSet() {
             whileInView={{ width: "100%", opacity: 1 }}
             transition={{ type: "tween", duration: 1.5 }}
             viewport={{ margin: "0px 0px -20% 0px", once: true }}
-            className="border-b-2 border-gray-400 pt-3 mb-3"
+            className="mb-3 border-b-2 border-gray-400 pt-3"
           />
 
           <div>
@@ -50,7 +50,8 @@ function SkillSet() {
                   <div
                     className="text-white"
                     data-tooltip-id="main-tooltip"
-                    data-tooltip-content={skill.name}>
+                    data-tooltip-content={skill.name}
+                  >
                     <motion.img
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -66,7 +67,7 @@ function SkillSet() {
                       src={`/skills/${skill.name}.svg`}
                       alt={skill.name}
                       width={20}
-                      className="size-10 md:size-18 pointer-events-none md:pointer-events-auto"
+                      className="pointer-events-none size-10 md:pointer-events-auto md:size-18"
                     />
                   </div>
                 </div>

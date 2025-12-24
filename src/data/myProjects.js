@@ -6,7 +6,7 @@ export const MajorProjects = [
     link: "https://thewandernest.vercel.app/listings",
     imgSrc: "/project-Images/wandernest.png",
     github: "https://github.com/SHAIK-RAIYAN/WanderNest",
-    techStack: ["Node.js", "Express", "MongoDB", "EJS"],
+    techStack: ["Node.js", "Express", "MongoDB", "EJS", "Bootstrap"],
   },
   {
     title: "TripSage",

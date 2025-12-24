@@ -71,7 +71,7 @@ export default function TextAppear({ children, className = "" }) {
         if (parentSplit) parentSplit.revert();
       };
     },
-    { scope: containerRef, dependencies: [children] }
+    { scope: containerRef, dependencies: [children] },
   );
 
   return (

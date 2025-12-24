@@ -20,11 +20,12 @@ function Marquee() {
   return (
     <div
       ref={container}
-      className="flex overflow-hidden whitespace-nowrap bg-black py-4">
-      <h1 className="marquee-part min-w-full px-4 text-9xl font-black uppercase text-white">
+      className="flex overflow-hidden bg-black py-4 whitespace-nowrap"
+    >
+      <h1 className="marquee-part min-w-full px-4 text-9xl font-black text-white uppercase">
         Simple Infinite Marquee
       </h1>
-      <h1 className="marquee-part min-w-full px-4 text-9xl font-black uppercase text-white">
+      <h1 className="marquee-part min-w-full px-4 text-9xl font-black text-white uppercase">
         Simple Infinite Marquee
       </h1>
     </div>

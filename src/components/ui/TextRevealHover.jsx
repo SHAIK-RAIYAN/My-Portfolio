@@ -46,7 +46,8 @@ function TextRevealHover({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden cursor-pointer inline-flex flex-col leading-none ${className}`}>
+      className={`relative inline-flex cursor-pointer flex-col overflow-hidden leading-none ${className}`}
+    >
       <span>{word}</span>
       <span className={`hover-text absolute top-full left-0 ${hoverColor}`}>
         {word}

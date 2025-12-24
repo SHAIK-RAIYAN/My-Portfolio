@@ -25,12 +25,13 @@ function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", delay: 1 }}
-        className="fixed top-0 flex justify-start z-40 mt-8">
+        className="fixed top-0 z-40 mt-8 flex justify-start"
+      >
         <a href="#home" onClick={handleNavClick} className="ml-3 md:ml-5">
           <img
             src="/founder2.jpg"
             alt="Home"
-            className="h-13 w-13 object-cover p-1 rounded-2xl border border-neutral-500 hover:scale-98 active:scale-95 cursor-pointer"
+            className="h-13 w-13 cursor-pointer rounded-2xl border border-neutral-500 object-cover p-1 hover:scale-98 active:scale-95"
           />
         </a>
 
@@ -39,37 +40,42 @@ function Navbar() {
           width={"fit"}
           height={"fit"}
           borderRadius={24}
-          className="text-white font-light text-sm md:text-lg gap-8 md:p-3 mx-3">
+          className="mx-3 gap-8 text-sm font-light text-white md:p-3 md:text-lg"
+        >
           <a
             href="#about"
             onClick={handleNavClick}
-            className="hidden md:inline-block relative px-2 group font-mono">
+            className="group relative hidden px-2 font-mono md:inline-block"
+          >
             About
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
 
           <a
             href="#skills"
             onClick={handleNavClick}
-            className="relative px-2 group font-mono">
+            className="group relative px-2 font-mono"
+          >
             Skills
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
 
           <a
             href="#projects"
             onClick={handleNavClick}
-            className=" md:inline-block relative px-2 group font-mono">
+            className="group relative px-2 font-mono md:inline-block"
+          >
             Projects
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
 
           <a
             href="#contact"
             onClick={handleNavClick}
-            className="relative px-2 group font-mono">
+            className="group relative px-2 font-mono"
+          >
             Contact
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
         </GlassNavbar>
       </motion.div>

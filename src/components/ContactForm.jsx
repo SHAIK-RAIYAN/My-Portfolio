@@ -57,7 +57,7 @@ export function ContactForm() {
           message: formData.message,
           time: new Date().toLocaleString(),
         },
-        PUBLIC_KEY
+        PUBLIC_KEY,
       );
 
       setLoading(false);
@@ -83,8 +83,8 @@ export function ContactForm() {
   const inputsDisabled = loading || sent;
 
   return (
-    <div className="shadow-input mx-auto w-full rounded-none border-t border-b border-neutral-600 border-dashed  p-4 md:p-8 ">
-      <h1 className="text-xl md:text-2xl font-bold font-mono text-neutral-300 text-center">
+    <div className="shadow-input mx-auto w-full rounded-none border-t border-b border-dashed border-neutral-600 p-4 md:p-8">
+      <h1 className="text-center font-mono text-xl font-bold text-neutral-300 md:text-2xl">
         Contact Me
       </h1>
 
@@ -147,35 +147,39 @@ export function ContactForm() {
             onChange={handleChange}
             disabled={inputsDisabled}
             className={cn(
-              `placeholder-text-neutral-600 flex h-28 w-full rounded-md border-none  px-3 py-2 text-sm  transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px]  focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 bg-zinc-800 text-white shadow-[0px_0px_1px_1px_#404040] focus-visible:ring-neutral-600`
+              `placeholder-text-neutral-600 flex h-28 w-full rounded-md border-none bg-zinc-800 px-3 py-2 text-sm text-white shadow-[0px_0px_1px_1px_#404040] transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
             )}
           />
         </LabelInputContainer>
 
-        {error && <p className="mb-4 text-red-500 text-sm">{error}</p>}
+        {error && <p className="mb-4 text-sm text-red-500">{error}</p>}
 
         <button
-          className="group/btn relative flex items-center justify-center gap-2 h-10 w-full rounded-md bg-gradient-to-br font-medium text-white  bg-zinc-800 from-zinc-900 to-zinc-900 shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="group/btn relative flex h-10 w-full items-center justify-center gap-2 rounded-md bg-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-900 font-medium text-white shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
-          disabled={inputsDisabled}>
+          disabled={inputsDisabled}
+        >
           {loading && (
             <svg
-              className="animate-spin h-4 w-4"
+              className="h-4 w-4 animate-spin"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <circle
                 className="opacity-25"
                 cx="12"
                 cy="12"
                 r="10"
                 stroke="currentColor"
-                strokeWidth="4"></circle>
+                strokeWidth="4"
+              ></circle>
               <path
                 className="opacity-75"
                 fill="currentColor"
-                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+              ></path>
             </svg>
           )}
 
@@ -184,7 +188,7 @@ export function ContactForm() {
           {!inputsDisabled && <BottomGradient />}
         </button>
 
-        <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparen to-transparent via-neutral-700" />
+        <div className="from-transparen my-8 h-[1px] w-full bg-gradient-to-r via-neutral-700 to-transparent" />
       </form>
     </div>
   );

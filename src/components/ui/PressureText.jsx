@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useRef, useState } from "react";
 
 const FONT_FAMILY = `"Roboto-Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`;
@@ -200,7 +198,8 @@ const PressureText = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full overflow-hidden bg-transparent">
+      className="relative h-full w-full overflow-hidden bg-transparent"
+    >
       <style>{`
         .stroke span { position: relative; color: ${textColor}; }
         .stroke span::after {
@@ -219,7 +218,7 @@ const PressureText = ({
         ref={titleRef}
         className={`text-pressure-title ${className} ${
           flex ? "flex justify-between" : ""
-        } ${stroke ? "stroke" : ""} uppercase text-center`}
+        } ${stroke ? "stroke" : ""} text-center uppercase`}
         style={{
           fontFamily,
           fontSize,
@@ -231,7 +230,8 @@ const PressureText = ({
           letterSpacing: 0,
           fontVariationSettings: baseline,
           WebkitFontVariationSettings: baseline,
-        }}>
+        }}
+      >
         {chars.map((char, i) => (
           <span
             key={i}
@@ -242,7 +242,8 @@ const PressureText = ({
               display: "inline-block",
               fontVariationSettings: baseline,
               WebkitFontVariationSettings: baseline,
-            }}>
+            }}
+          >
             {char}
           </span>
         ))}

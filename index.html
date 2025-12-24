@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHAIK RAIYAN</title>
   </head>
-  <body oncontextmenu="false" class="w-full h-screen bg-black text-white">
+  <body oncontextmenu="false" class="h-screen w-full bg-black text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
   <script>
-    document.addEventListener("contextmenu", function (e) {
-      e.preventDefault();
-    },false);
+    document.addEventListener(
+      "contextmenu",
+      function (e) {
+        e.preventDefault();
+      },
+      false,
+    );
   </script>
 </html>

@@ -57,14 +57,16 @@ const Magnet = ({
       ref={magnetRef}
       className={wrapperClassName}
       style={{ position: "relative", display: "inline-block" }}
-      {...props}>
+      {...props}
+    >
       <div
         className={innerClassName}
         style={{
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
           transition: transitionStyle,
           willChange: "transform",
-        }}>
+        }}
+      >
         {children}
       </div>
     </div>
