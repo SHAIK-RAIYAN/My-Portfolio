@@ -19,7 +19,7 @@ const TimePolice = () => {
 
       const message = timeData.isLate
         ? "BRO. Go to sleep. My portfolio will still exist in the morning. Your Sleep cycle won’t." //"You should be sleeping, but since you're here, look at my projects."
-        : "Procrastinating? Good strategy. This portfolio offers a significantly higher ROI than doom-scrolling social media."; //"There are thousands of developers coding right now, but you are currently looking at my Portfolio best choice.";
+        : "Procrastinating? Good strategy. This portfolio offers a higher ROI than doom-scrolling social media."; //"There are thousands of developers coding right now, but you are currently looking at my Portfolio best choice.";
 
       setDisplayData({
         city: location.city,
