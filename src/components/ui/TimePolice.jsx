@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { TbHazeMoon } from "react-icons/tb";
+import { PiSunHorizonDuotone } from "react-icons/pi";
 import {
   calculateLocalTime,
   fetchLocationData,
@@ -45,7 +47,9 @@ const TimePolice = () => {
             {displayData.text}
           </p>
         </div>
-        <span className="text-2xl">{displayData.isLate ? "🌙" : "⚡"}</span>
+        <span className="text-2xl">
+          {displayData.isLate ? <TbHazeMoon /> : <PiSunHorizonDuotone />}
+        </span>
       </div>
     </div>
   );
