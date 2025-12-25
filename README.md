@@ -47,7 +47,3 @@ I engineer production-grade full-stack solutions with a focus on performance, ac
 **Ready to deploy impactful solutions.**
 
 [LinkedIn](https://linkedin.com/in/shaik-raiyan) • [GitHub](https://github.com/SHAIK-RAIYAN) • [Portfolio](http://shaikraiyan.me/)
-
-```
-
-```
