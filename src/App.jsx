@@ -6,6 +6,7 @@ import { FaTowerBroadcast } from "react-icons/fa6";
 import "./App.css";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import VisitorTracker from "./components/ui/VisitorTracker";
 import { fetchLocationData } from "./services/locationService";
 
 // applying lazy loading
@@ -33,6 +34,7 @@ function App() {
         import("./components/Footer"),
         import("./components/ui/TimePolice"),
       ];
+
       await Promise.all(promises);
     };
 
@@ -119,6 +121,8 @@ function App() {
           <Footer />
         </Suspense>
       </div>
+
+      <VisitorTracker />
     </div>
   );
 }
