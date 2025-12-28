@@ -23,7 +23,7 @@ export const OtherProjects = [
   {
     title: "My Gsap Learnings",
     description:
-      "A travel platform offering unique stays and experiences across popular destinations.",
+      "A comprehensive interactive showcase leveraging GSAP for complex scroll triggers, SVG path animations, page transitions, and custom cursor effects.",
     link: "https://my-gsap-animations.vercel.app/",
     imgSrc: "/project-Images/gsap.png",
     github: "https://github.com/SHAIK-RAIYAN/GSAP",
@@ -31,7 +31,8 @@ export const OtherProjects = [
   },
   {
     title: "WizardZ",
-    description: "React landing page featuring GSAP scroll animations.",
+    description:
+      "A high-performance single-page React landing page featuring immersive GSAP scroll animations and modern UI design patterns.",
     link: "https://wizardwitch.vercel.app/",
     imgSrc: "/project-Images/wizardz.png",
     github: "https://github.com/SHAIK-RAIYAN/WizardZ-GsapFrontendLandingSite",
@@ -41,7 +42,7 @@ export const OtherProjects = [
   {
     title: "Currency Convertor",
     description:
-      "A personalized trip planning platform that suggests itineraries based on destination, budget, dates, and interests.",
+      "A real-time financial utility built with React and Framer Motion, offering seamless currency exchange rate calculations with a fluid user interface.",
     link: "https://fxchange.vercel.app/",
     imgSrc: "/project-Images/currency-convertor.png",
     github: "https://github.com/SHAIK-RAIYAN/currency-convertor-react",
@@ -51,7 +52,7 @@ export const OtherProjects = [
   {
     title: "Equi Trade",
     description:
-      "A personalized trip planning platform that suggests itineraries based on destination, budget, dates, and interests.",
+      "A multi-page fintech frontend interface simulation, featuring robust navigation and responsive design.",
     link: "https://equi-trade.vercel.app/",
     imgSrc: "/project-Images/equitrade.png",
     github: "https://github.com/SHAIK-RAIYAN/EquiTrade",
@@ -61,7 +62,7 @@ export const OtherProjects = [
   {
     title: "Weather widget",
     description:
-      "A personalized trip planning platform that suggests itineraries based on destination, budget, dates, and interests.",
+      "A functional weather dashboard utilizing Material UI for a dark aesthetic vibe, delivering real-time forecast data with a clean user experience.",
     link: "https://findthesky.vercel.app",
     imgSrc: "/project-Images/weatherwidget.png",
     github: "https://github.com/SHAIK-RAIYAN/Weather-Widget",
