@@ -46,7 +46,7 @@ const VisitorTracker = () => {
       }
 
       const payload = {
-        content: "🚀 **New Portfolio Hit!**",
+        content: "🚀 **New Portfolio Hit!** <@782185547732353074>",
         embeds: [
           {
             title: "Visitor Details",
