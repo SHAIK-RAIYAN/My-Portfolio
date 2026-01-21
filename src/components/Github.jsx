@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
+import WordAppear from "./ui/WordAppear";
 
 function Github() {
   const [total, setTotal] = useState(null);
@@ -21,7 +22,7 @@ function Github() {
 
   return (
     <div className="px-4">
-      <h2 className="text-2xl">GitHub Activity</h2>
+      <WordAppear word={"GitHub Activity"} className="text-2xl text-white" />
       {total !== null && (
         <span className="text-neutral-400">Total: {total} contributions</span>
       )}{" "}

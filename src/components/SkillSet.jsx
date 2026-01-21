@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Tooltip } from "react-tooltip";
 import Magnet from "./ui/magnet";
+import WordAppear from "./ui/WordAppear";
 
 function SkillSet() {
   const skills = [
@@ -33,7 +34,8 @@ function SkillSet() {
       <div className="relative z-10 mx-auto mt-10 py-4 pb-40" id="skills">
         <div className="px-4 py-8">
           <div className="text-3xl text-white">
-            <p className="text-2xl text-neutral-500">My</p> <p>Skills</p>
+            <WordAppear word={"My"} className="text-lg text-neutral-500" />
+            <WordAppear word={"Skills"} className="text-3xl text-white" />
           </div>
           <motion.div
             initial={{ width: 0, opacity: 0.5 }}
