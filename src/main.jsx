@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { ReactLenis } from "lenis/react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -8,6 +9,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ReactLenis root>
       <App />
+      <Analytics />
     </ReactLenis>
   </StrictMode>,
 );
