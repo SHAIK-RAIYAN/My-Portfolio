@@ -85,7 +85,7 @@ export function ContactForm() {
   return (
     <div className="shadow-input mx-auto w-full rounded-none border-t border-b border-dashed border-neutral-600 p-4 md:p-8">
       <h1 className="text-center font-mono text-xl font-bold text-neutral-300 md:text-2xl">
-        Contact Me
+        Send me a message
       </h1>
 
       <form className="my-8" onSubmit={handleSubmit}>

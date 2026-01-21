@@ -82,7 +82,7 @@ const VisitorTracker = () => {
               { name: "📱 Device", value: navigator.userAgent, inline: false },
             ],
             footer: {
-              text: "Portfolio Logger • Vion Security",
+              text: "Portfolio Logger • Portfolio Security",
             },
             timestamp: new Date().toISOString(),
           },
