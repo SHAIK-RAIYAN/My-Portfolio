@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="font-dmsans no-scrollbar mx-auto min-h-screen w-full max-w-[950px] overflow-x-hidden border-r border-l border-neutral-800 bg-[#0a0a0a] md:px-12">
+    <div className="font-dmsans no-scrollbar mx-auto min-h-screen w-full max-w-237.5 overflow-x-hidden border-r border-l border-neutral-800 bg-[#0a0a0a] md:px-12">
       <div className="relative z-0">
         {/* scroll progress bar */}
         <motion.div

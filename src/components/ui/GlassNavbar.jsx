@@ -261,7 +261,7 @@ const GlassNavbar = ({
   };
 
   const glassSurfaceClasses =
-    "relative flex items-center justify-center overflow-hidden transition-opacity duration-[260ms] ease-out";
+    "relative center overflow-hidden transition-opacity duration-[260ms] ease-out";
 
   const focusVisibleClasses = isDarkMode
     ? "focus-visible:outline-2 focus-visible:outline-[#0A84FF] focus-visible:outline-offset-2"
@@ -358,7 +358,7 @@ const GlassNavbar = ({
         </defs>
       </svg>
 
-      <div className="relative z-10 flex h-fit w-fit items-center justify-center gap-2 rounded-[inherit]">
+      <div className="center relative z-10  h-fit w-fit gap-2 rounded-[inherit]">
         {children}
       </div>
     </div>

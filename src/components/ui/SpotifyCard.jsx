@@ -60,16 +60,16 @@ export default function SpotifyCard() {
             )}
           </span>
         </div>
-        <h3 className="max-w-[180px] truncate text-sm text-gray-100">
+        <h3 className="max-w-45 truncate text-sm text-gray-100">
           {data.title}
         </h3>
-        <p className="max-w-[180px] truncate text-sm font-light text-neutral-500">
+        <p className="max-w-45 truncate text-sm font-light text-neutral-500">
           {data.artist}
         </p>
       </div>
 
       <a href={data.songUrl} target="_blank" rel="noopener noreferrer">
-        <div className="mr-2 flex items-center justify-center rounded-lg border border-neutral-800 p-2 text-neutral-300 transition-colors hover:bg-neutral-900">
+        <div className="center mr-2 rounded-lg border border-neutral-800 p-2 text-neutral-300 transition-colors hover:bg-neutral-900">
           {data.isPlaying ? <FaPause size={12} /> : <CiShare1 size={12} />}
         </div>
       </a>

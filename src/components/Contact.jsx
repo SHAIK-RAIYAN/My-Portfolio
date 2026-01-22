@@ -5,9 +5,9 @@ import PressureText from "./ui/PressureText";
 
 function Contact() {
   return (
-    <div className="flex flex-col items-center justify-center" id="contact">
-      <div className="mb-5 flex w-full items-center justify-center rounded-4xl py-6">
-        <div className="flex w-full max-w-md flex-col items-center justify-center gap-3 px-1 text-center">
+    <div className="center flex-col" id="contact">
+      <div className="center mb-5  w-full rounded-4xl py-6">
+        <div className="center  w-full max-w-md flex-col gap-3 px-1 text-center">
           <PressureText
             text="Get In Touch!"
             flex={true}

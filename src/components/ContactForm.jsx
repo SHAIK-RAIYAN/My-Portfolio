@@ -83,48 +83,86 @@ export function ContactForm() {
   const inputsDisabled = loading || sent;
 
   return (
-    <div className="shadow-input mx-auto w-full rounded-none border-t border-b border-dashed border-neutral-600 p-4 md:p-8">
-      <h1 className="text-center font-mono text-xl font-bold text-neutral-300 md:text-2xl">
-        Send me a message
+    <div className="shadow-input mx-auto w-full rounded-none border-t border-b border-dashed border-neutral-600 p-4 md:border-t-0 md:p-8">
+      <h1 className="flex items-end justify-center gap-2 text-4xl font-bold text-neutral-300 md:justify-start md:text-4xl">
+        Contact
+        <div className="mb-1 hidden h-0.5 w-full bg-neutral-600 md:block"></div>
       </h1>
 
       <form className="my-8" onSubmit={handleSubmit}>
-        <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
-          <LabelInputContainer>
-            <Label htmlFor="firstname">First name</Label>
-            <Input
-              id="firstname"
-              placeholder="Raiyan"
-              type="text"
-              value={formData.firstname}
-              onChange={handleChange}
-              disabled={inputsDisabled}
-            />
-          </LabelInputContainer>
-          <LabelInputContainer>
-            <Label htmlFor="lastname">Last name</Label>
-            <Input
-              id="lastname"
-              placeholder="Shaik"
-              type="text"
-              value={formData.lastname}
-              onChange={handleChange}
-              disabled={inputsDisabled}
-            />
-          </LabelInputContainer>
-        </div>
+        <div className="flex justify-between gap-6">
+          <div className="hidden w-50 flex-col gap-2 md:flex">
+            <div id="card" className="relative">
+              <div
+                id="cardImg"
+                className="relative h-58 w-50 overflow-hidden rounded-xl border-6 border-neutral-800"
+              >
+                <img
+                  src="/me.jpeg"
+                  className="size-full object-cover"
+                  alt="Profile Art"
+                />
+              </div>
+              <div
+                id="tag"
+                className="center absolute right-0 bottom-0 h-8 w-32 rounded-tl-lg border-t-6 border-l-6 border-neutral-800 bg-[#0a0a0a] before:absolute before:-top-5.5 before:right-1.5 before:size-4 before:rounded-br-lg before:bg-transparent before:shadow-[4px_4px_0_#262626] after:absolute after:-top-4 after:right-0 after:size-4 after:rounded-br-lg after:shadow-[6px_6px_0_#0a0a0a]"
+              >
+                <div className="center z-10 w-[95%] gap-2 rounded-sm border border-emerald-500/30 bg-emerald-500/10 px-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                  </span>
+                  <p className="text-xs text-emerald-300">Available</p>
+                </div>
+              </div>
+              <div
+                id="curve1"
+                className="absolute bottom-1.5 left-14 size-4 rounded-br-lg bg-transparent shadow-[4px_4px_0_#262626]"
+              ></div>
+              <div
+                id="curve2"
+                className="absolute bottom-0 left-15.5 size-4 rounded-br-lg bg-transparent shadow-[4px_4px_0_#0a0a0a]"
+              ></div>
+            </div>
+          </div>
 
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            placeholder="shaikraiyan2005@gmail.com"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            disabled={inputsDisabled}
-          />
-        </LabelInputContainer>
+          <div className="mb-4 flex w-full flex-col space-y-2 space-x-2">
+            <LabelInputContainer>
+              <Label htmlFor="firstname">First name</Label>
+              <Input
+                id="firstname"
+                placeholder="Raiyan"
+                type="text"
+                value={formData.firstname}
+                onChange={handleChange}
+                disabled={inputsDisabled}
+              />
+            </LabelInputContainer>
+            <LabelInputContainer>
+              <Label htmlFor="lastname">Last name</Label>
+              <Input
+                id="lastname"
+                placeholder="Shaik"
+                type="text"
+                value={formData.lastname}
+                onChange={handleChange}
+                disabled={inputsDisabled}
+              />
+            </LabelInputContainer>
+
+            <LabelInputContainer className="mb-4">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                placeholder="shaikraiyan2005@gmail.com"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                disabled={inputsDisabled}
+              />
+            </LabelInputContainer>
+          </div>
+        </div>
 
         <LabelInputContainer className="mb-4">
           <Label htmlFor="subject">Subject</Label>
@@ -155,7 +193,7 @@ export function ContactForm() {
         {error && <p className="mb-4 text-sm text-red-500">{error}</p>}
 
         <button
-          className="group/btn relative flex h-10 w-full items-center justify-center gap-2 rounded-md bg-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-900 font-medium text-white shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="group/btn center relative h-10 w-full gap-2 rounded-md bg-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-900 font-medium text-white shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
           disabled={inputsDisabled}
         >
