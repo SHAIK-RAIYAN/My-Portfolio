@@ -3,6 +3,7 @@ import { useState } from "react";
 import { cn } from "../utils/accernity";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
+import SendButton from "./ui/SendButton";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -185,15 +186,17 @@ export function ContactForm() {
             onChange={handleChange}
             disabled={inputsDisabled}
             className={cn(
-              `placeholder-text-neutral-600 flex h-28 w-full rounded-md border-none bg-zinc-800 px-3 py-2 text-sm text-white shadow-[0px_0px_1px_1px_#404040] transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
+              `placeholder-text-neutral-600 flex h-28 w-full rounded-md border-none bg-zinc-800 px-3 py-2 text-sm text-white shadow-[0px_0px_1px_1px_#404040] transition duration-400 placeholder:text-neutral-400 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
             )}
           />
         </LabelInputContainer>
 
         {error && <p className="mb-4 text-sm text-red-500">{error}</p>}
 
-        <button
-          className="group/btn center relative h-10 w-full gap-2 rounded-md bg-zinc-800 bg-gradient-to-br from-zinc-900 to-zinc-900 font-medium text-white shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+        <SendButton loading={loading} sent={sent} inputsDisabled={inputsDisabled} />
+
+        {/* <button
+          className="group/btn center relative h-10 w-full gap-2 rounded-md bg-zinc-800 bg-linear-to-br from-zinc-900 to-zinc-900 font-medium text-white shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
           disabled={inputsDisabled}
         >
@@ -224,9 +227,9 @@ export function ContactForm() {
           {loading ? "Sending..." : sent ? "Sent" : "Send Message"}
 
           {!inputsDisabled && <BottomGradient />}
-        </button>
+        </button> */}
 
-        <div className="from-transparen my-8 h-[1px] w-full bg-gradient-to-r via-neutral-700 to-transparent" />
+        <div className="from-transparen my-8 h-px w-full bg-linear-to-r via-neutral-700 to-transparent" />
       </form>
     </div>
   );
@@ -235,8 +238,8 @@ export function ContactForm() {
 const BottomGradient = () => {
   return (
     <>
-      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-linear-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-linear-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
     </>
   );
 };
