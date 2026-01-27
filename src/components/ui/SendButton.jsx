@@ -1,7 +1,7 @@
 function SendButton({ loading, sent, inputsDisabled }) {
   return (
     <button
-      className="mx-auto group relative flex h-11 w-80 cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-white/30 px-0.5 py-px"
+      className="group relative mx-auto flex h-11 w-80 cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-white/30 px-0.5"
       type="submit"
       disabled={inputsDisabled}
     >
@@ -46,15 +46,27 @@ const Box = ({ loading, sent }) => {
     ];
   }
 
+  const getAnimationState = () => {
+    if (loading) {
+      return "translate-x-0 rotate-180 transition-[translate] duration-1000 ease-in-out";
+    }
+    if (sent) {
+      return "translate-x-69 rotate-180 duration-500 ease-out transition-all";
+    }
+    return "transition-all duration-500 ease-out group-hover:translate-x-69 group-hover:rotate-180";
+  };
+
   return (
     <div
-      className={`absolute left-0.5 z-20 flex size-9 items-center justify-center rounded-lg border border-neutral-500 bg-neutral-600 transition-transform duration-500 ease-out group-hover:translate-x-69 group-hover:rotate-180 ${loading ? "translate-x-0! duration-1000!" : ""}`}
+      className={`absolute left-0.5 z-20 flex size-9 items-center justify-center rounded-lg border border-neutral-500 bg-neutral-600 ${getAnimationState()}`}
     >
       <div className="grid grid-cols-5 gap-px">
         {schema.map((active, i) => (
           <span
             key={i}
-            className={`inline-block size-1 rounded-full ${active ? "bg-white" : "bg-white/30"}`}
+            className={`inline-block size-1 rounded-full ${
+              active ? "bg-white" : "bg-white/30"
+            }`}
           />
         ))}
       </div>
