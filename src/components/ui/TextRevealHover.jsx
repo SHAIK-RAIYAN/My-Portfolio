@@ -7,7 +7,7 @@ gsap.registerPlugin(SplitText);
 function TextRevealHover({
   word,
   className = "",
-  hoverColor = "text-yellow-400",
+  hoverColor = "text-[#FFCC00]",
 }) {
   const containerRef = useRef(null);
 

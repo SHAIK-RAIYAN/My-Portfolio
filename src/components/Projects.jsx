@@ -16,7 +16,7 @@ function Projects() {
               <TextRevealHover
                 word="Projects"
                 className="text-2xl font-bold text-white uppercase"
-                hoverColor="text-amber-500"
+                hoverColor="text-[#FFCC00]"
               />
             </div>
           </div>
@@ -40,7 +40,7 @@ function Projects() {
               <TextRevealHover
                 word="Experiments"
                 className="text-2xl font-bold text-white uppercase"
-                hoverColor="text-amber-500"
+                hoverColor="text-[#FFCC00]"
               />
             </div>
           </div>

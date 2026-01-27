@@ -46,6 +46,16 @@ export function ContactForm() {
     }
 
     try {
+      // //Testing submit
+      // setLoading(true);
+      // await new Promise((resolve) => setTimeout(resolve, 5000));
+      // setLoading(false);
+
+      // setSent(true);
+      // await new Promise((resolve) => setTimeout(resolve, 5000));
+      // setSent(false);
+      // return;
+
       setLoading(true);
 
       await emailjs.send(
@@ -193,7 +203,11 @@ export function ContactForm() {
 
         {error && <p className="mb-4 text-sm text-red-500">{error}</p>}
 
-        <SendButton loading={loading} sent={sent} inputsDisabled={inputsDisabled} />
+        <SendButton
+          loading={loading}
+          sent={sent}
+          inputsDisabled={inputsDisabled}
+        />
 
         {/* <button
           className="group/btn center relative h-10 w-full gap-2 rounded-md bg-zinc-800 bg-linear-to-br from-zinc-900 to-zinc-900 font-medium text-white shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"

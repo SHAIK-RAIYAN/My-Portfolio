@@ -73,7 +73,7 @@ function App() {
             }`}
           >
             <div className="pointer-events-none">
-              <FaTowerBroadcast className="scale-130 text-neutral-300 transition-transform duration-500 group-hover:rotate-y-360" />
+              <FaTowerBroadcast className="scale-130 text-neutral-300 group-hover:animate-pulse" />
             </div>
           </div>
 
@@ -89,7 +89,7 @@ function App() {
                 animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -10, scale: 0.95, filter: "blur(4px)" }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute top-14 right-0 w-[350px]"
+                className="absolute top-14 right-0 w-87.5"
               >
                 <div className="overflow-hidden rounded-2xl border border-neutral-800 bg-[#0a0a0a]/90 p-1 shadow-2xl backdrop-blur-xl">
                   <Suspense

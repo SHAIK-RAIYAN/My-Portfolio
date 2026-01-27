@@ -122,7 +122,7 @@ function Home() {
                   as="button"
                   className="flex items-center space-x-1 text-sm text-white"
                 >
-                  <IoDocumentTextOutline className="text-neutral-300 transition-transform duration-1500 group-hover:scale-110 group-hover:rotate-y-360 group-hover:-rotate-z-360 group-hover:text-white" />
+                  <IoDocumentTextOutline className="text-neutral-300 transition-transform group-hover:scale-110 group-hover:animate-pulse group-hover:text-white" />
                   <span className="font-normal text-neutral-300">Resume</span>
                 </HoverBorderGradient>
               </a>
