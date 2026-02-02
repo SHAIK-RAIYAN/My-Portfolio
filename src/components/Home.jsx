@@ -68,9 +68,10 @@ function Home() {
             <Typewriter
               options={{
                 strings: [
-                  "A Microsoft Fabric Data Engineer.",
                   "A Full-Stack Web Developer.",
                   "A Java Programmer.",
+                  "Continuous Curiosity.",
+                  "Constant Evolution.",
                 ],
                 autoStart: true,
                 loop: true,
