@@ -21,6 +21,15 @@ export const MajorProjects = [
 
 export const OtherProjects = [
   {
+    title: "GenQ",
+    description:
+      "Transform raw syllabus PDFs into print-ready, Bloom's Taxonomy-aligned examination papers using enterprise-grade AI.",
+    link: "https://genq.raiyan.app/",
+    imgSrc: "/project-Images/genq.png",
+    github: "https://github.com/SHAIK-RAIYAN/GENQ",
+    techStack: ["NextJS","React", "Typescript", "Tailwind", "lenis"],
+  },
+  {
     title: "Bunkai Reader",
     description:
       "A high-performance Web EPUB Reader built for the modern web. Currently supports EPUB files only.",
