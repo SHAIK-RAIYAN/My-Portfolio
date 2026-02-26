@@ -26,7 +26,7 @@ function Home() {
           className="relative mx-auto h-44 w-44 overflow-hidden rounded-full border border-neutral-500 md:mx-2 md:mt-0 md:h-60 md:w-60"
         >
           <img
-            src="/Raiyan.jpg"
+            src="/Raiyan.webp"
             alt="Shaik Raiyan"
             className="h-full w-full rounded-full object-cover p-2"
           />
@@ -47,7 +47,7 @@ function Home() {
                   Shaik Raiyan
                 </span>
 
-                <span className="bg-[url(/art.jpg)] bg-cover bg-clip-text text-4xl font-bold text-transparent lg:text-7xl">
+                <span className="bg-[url(/art.webp)] bg-cover bg-clip-text text-4xl font-bold text-transparent lg:text-7xl">
                   Shaik Raiyan
                 </span>
               </div>

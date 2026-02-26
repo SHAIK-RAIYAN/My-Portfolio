@@ -29,7 +29,7 @@ function Navbar() {
       >
         <a href="#home" onClick={handleNavClick} className="ml-3 md:ml-5">
           <img
-            src="/founder2.jpg"
+            src="/founder2.webp"
             alt="Home"
             className="h-13 w-13 cursor-pointer rounded-2xl border border-neutral-500 object-cover p-1 hover:scale-98 active:scale-95"
           />

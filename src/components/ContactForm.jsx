@@ -109,7 +109,7 @@ export function ContactForm() {
                 className="relative h-58 w-50 overflow-hidden rounded-xl border-6 border-neutral-800"
               >
                 <img
-                  src="/me.jpeg"
+                  src="/me.webp"
                   className="size-full object-cover"
                   alt="Profile Art"
                 />
