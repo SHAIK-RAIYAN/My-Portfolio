@@ -33,9 +33,9 @@ export default function SpotifyCard() {
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="flex items-center gap-4 overflow-hidden rounded-xl border border-neutral-700 bg-black p-3 whitespace-nowrap hover:bg-neutral-950 md:w-auto"
+      className="border-border-primary bg-bg-primary hover:bg-bg-secondary flex items-center gap-4 overflow-hidden rounded-xl border p-3 whitespace-nowrap md:w-auto"
     >
-      <div className="relative h-14 w-14 flex-shrink-0">
+      <div className="relative h-14 w-14 shrink-0">
         <img
           src={data.albumImageUrl}
           alt={data.album}
@@ -45,7 +45,7 @@ export default function SpotifyCard() {
 
       <div className="flex min-w-0 flex-1 flex-col justify-center">
         <div className="mb-1 flex items-center gap-2">
-          <span className="flex items-center gap-1 text-sm tracking-widest text-neutral-500 uppercase">
+          <span className="text-text-muted flex items-center gap-1 text-sm tracking-widest uppercase">
             {data.isPlaying ? (
               <>
                 <FaSpotify size={10} className="text-green-400" />
@@ -60,16 +60,16 @@ export default function SpotifyCard() {
             )}
           </span>
         </div>
-        <h3 className="max-w-45 truncate text-sm text-gray-100">
+        <h3 className="text-text-primary max-w-45 truncate text-sm">
           {data.title}
         </h3>
-        <p className="max-w-45 truncate text-sm font-light text-neutral-500">
+        <p className="text-text-muted max-w-45 truncate text-sm font-light">
           {data.artist}
         </p>
       </div>
 
       <a href={data.songUrl} target="_blank" rel="noopener noreferrer">
-        <div className="center mr-2 rounded-lg border border-neutral-800 p-2 text-neutral-300 transition-colors hover:bg-neutral-900">
+        <div className="center border-border-secondary text-text-secondary hover:bg-border-secondary mr-2 rounded-lg border p-2 transition-colors">
           {data.isPlaying ? <FaPause size={12} /> : <CiShare1 size={12} />}
         </div>
       </a>

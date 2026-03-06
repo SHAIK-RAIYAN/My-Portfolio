@@ -10,7 +10,7 @@ import SpotifyCard from "./ui/SpotifyCard";
 function Home() {
   return (
     <motion.div
-      className="mt-10 flex h-screen flex-col justify-center gap-10 overflow-hidden text-white"
+      className="text-text-primary mt-10 flex h-screen flex-col justify-center gap-10 overflow-hidden"
       id="home"
     >
       <motion.div
@@ -23,7 +23,7 @@ function Home() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.3, type: "tween" }}
-          className="relative mx-auto h-44 w-44 overflow-hidden rounded-full border border-neutral-500 md:mx-2 md:mt-0 md:h-60 md:w-60"
+          className="border-border-primary relative mx-auto h-44 w-44 overflow-hidden rounded-full border md:mx-2 md:mt-0 md:h-60 md:w-60"
         >
           <img
             src="/Raiyan.webp"
@@ -40,21 +40,23 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", delay: 1.3, duration: 0.5 }}
           >
-            <h2 className="relative z-20 py-4 text-4xl font-normal tracking-tight text-[#e5e7eb] lg:text-6xl">
+            <h2 className="text-text-secondary relative z-20 py-4 text-4xl font-normal tracking-tight lg:text-6xl">
               Hi, I'm{" "}
-              <div className="relative inline-block">
-                <span className="absolute inset-0 text-4xl font-bold text-amber-500 opacity-70 blur-sm lg:text-7xl">
+              <div className="relative inline-block select-none">
+                <span className="dark:text-accent-amber absolute inset-0 text-4xl font-bold underline decoration-wavy decoration-6 opacity-70 blur-none lg:text-7xl dark:decoration-0 dark:blur-sm">
                   Shaik Raiyan
                 </span>
 
-                <span className="bg-[url(/art.webp)] bg-cover bg-clip-text text-4xl font-bold text-transparent lg:text-7xl">
+                <span className="bg-[url(/art3.webp)] bg-cover bg-clip-text text-4xl font-bold text-transparent lg:text-7xl dark:bg-[url(/art.webp)]">
                   Shaik Raiyan
                 </span>
               </div>
             </h2>
-            <p className="font-pixel border-t border-b border-dashed text-xl font-extralight text-neutral-600 italic">
-              I write something for machines and they understand!
-            </p>
+            <div className="border-border-primary relative flex h-8 w-full  before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw] before:bg-[repeating-linear-gradient(315deg,var(--border-primary)_0,var(--border-primary)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:opacity-[0.56]">
+              <p className="font-pixel w-full text-text-muted  text-xl font-extralight italic">
+                I write something for machines and they understand!
+              </p>
+            </div>
           </motion.div>
         </div>
 
@@ -63,7 +65,7 @@ function Home() {
             initial={{ opacity: 0, y: 75 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "easeInOut", delay: 1.5, duration: 0.5 }}
-            className="font-pixel flex w-auto max-w-full justify-start gap-2 text-4xl whitespace-normal text-[#868686] md:gap-4 md:text-5xl"
+            className="font-pixel text-text-muted flex w-auto max-w-full justify-start gap-2 text-4xl whitespace-normal md:gap-4 md:text-5xl"
           >
             <Typewriter
               options={{
@@ -89,12 +91,12 @@ function Home() {
             transition={{ type: "easeInOut", duration: 0.5, delay: 1.7 }}
             className="py-5"
           >
-            <p className="w-full text-sm font-normal text-gray-400 md:text-lg">
+            <p className="text-text-tertiary w-full text-sm font-normal md:text-lg">
               I’m a curious full-stack developer who loves turning ideas into
               smooth, scalable, and fun digital experiences powered by the MERN
               stack, SQL, and Java—with a growing edge in DSA.
             </p>
-            <span className="flex flex-wrap items-center justify-start gap-4 pt-3 text-lg text-white md:text-xl">
+            <span className="text-text-primary flex flex-wrap items-center justify-start gap-4 pt-3 text-lg md:text-xl">
               <a
                 href="https://github.com/SHAIK-RAIYAN/"
                 target="_blank"
@@ -121,10 +123,12 @@ function Home() {
                 <HoverBorderGradient
                   containerClassName="rounded-full "
                   as="button"
-                  className="flex items-center space-x-1 text-sm text-white"
+                  className="text-text-primary flex items-center space-x-1 text-sm"
                 >
-                  <IoDocumentTextOutline className="text-neutral-300 transition-transform group-hover:scale-110 group-hover:animate-pulse group-hover:text-white" />
-                  <span className="font-normal text-neutral-300">Resume</span>
+                  <IoDocumentTextOutline className="text-text-secondary group-hover:text-text-primary transition-transform group-hover:scale-110 group-hover:animate-pulse" />
+                  <span className="text-text-secondary font-normal">
+                    Resume
+                  </span>
                 </HoverBorderGradient>
               </a>
               <div className="flex-1">
@@ -140,8 +144,8 @@ function Home() {
         place="top"
         variant="light"
         style={{
-          backgroundColor: "#e5e5e5",
-          color: "#000",
+          backgroundColor: "var(--tooltip-bg)",
+          color: "var(--tooltip-color)",
           borderRadius: "6px",
           fontSize: "10px",
         }}

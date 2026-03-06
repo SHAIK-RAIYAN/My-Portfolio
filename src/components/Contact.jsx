@@ -6,8 +6,8 @@ import PressureText from "./ui/PressureText";
 function Contact() {
   return (
     <div className="center flex-col" id="contact">
-      <div className="center mb-5  w-full rounded-4xl py-6">
-        <div className="center  w-full max-w-md flex-col gap-3 px-1 text-center">
+      <div className="center mb-5 w-full rounded-4xl py-6">
+        <div className="center w-full max-w-md flex-col gap-3 px-1 text-center">
           <PressureText
             text="Get In Touch!"
             flex={true}
@@ -16,22 +16,22 @@ function Contact() {
             width={true}
             weight={true}
             italic={true}
-            textColor="#FFF"
+            textColor="var(--text-primary)"
             strokeColor="#ff0000"
             minFontSize={28}
           />
-          <p className="mt-2 text-sm text-gray-500 md:text-base">
+          <p className="text-text-muted mt-2 text-sm md:text-base">
             I am always open to discussing new projects, creative ideas, or
             opportunities to be part of your visions.
           </p>
-          <div className="mt-4 flex gap-5 text-xl md:text-2xl">
+          <div className="text-text-primary mt-4 flex gap-5 text-xl md:text-2xl">
             <a
               href="https://wa.me/8247460113"
               target="_blank"
               data-tooltip-id="main-tooltip"
               data-tooltip-content="Whatsapp"
             >
-              <FaWhatsapp className="transition hover:text-green-400" />
+              <FaWhatsapp className="transition hover:text-green-600 dark:hover:text-green-400" />
             </a>
             <a
               href="https://instagram.com/_sk_raiyan_"
@@ -60,8 +60,8 @@ function Contact() {
         place="top"
         variant="light"
         style={{
-          backgroundColor: "#e5e5e5",
-          color: "#000",
+          backgroundColor: "var(--tooltip-bg)",
+          color: "var(--tooltip-color)",
           borderRadius: "6px",
           fontSize: "10px",
         }}

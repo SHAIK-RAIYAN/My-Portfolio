@@ -1,41 +1,144 @@
 @import "tailwindcss";
 
-/* Text when selected */
-::selection {
-  background-color: #ffffffa0;
-  color: #000;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Fonts */
+  --font-poppins: "Poppins", sans-serif;
+  --font-pixel: "VT323-Regular", monospace;
+
+  /* Shadows */
+  --shadow-input:
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
 
-::-moz-selection {
-  background-color: #ffffffa0; /* Firefox */
-  color: #000;
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.woff2") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-::-webkit-selection {
-  background-color: #ffffffa0; /* Safari / old browsers */
-  color: #000;
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Hide scrollbar  */
-::-webkit-scrollbar {
-  display: none;
+@font-face {
+  font-family: "VT323-Regular";
+  src: url("/fonts/VT323-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto-Flex";
+  src: url("/Roboto-Flex.woff2") format("woff2");
+  font-weight: 1 1000;
+  font-style: normal;
+  font-stretch: 50% 200%;
+  font-display: swap;
+}
+
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #fdfdfd;
+  --text-primary: #14171f;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-muted: #64748b;
+  --border-primary: #c0c5cc;
+  --border-secondary: #c7cbd0;
+  --border-tertiary: #ebeff4;
+  --accent-amber: #d97706;
+  --accent-navy:#007cce;
+  --tooltip-bg: #0f172a;
+  --tooltip-color: #ffffff;
+}
+
+.dark {
+  --bg-primary: #000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary:#111111;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --text-tertiary: #9ca3af;
+  --text-muted: #737373;
+  --border-primary: #565656;
+  --border-secondary: #2a2a2a;
+  --border-tertiary: #1f1f1f;
+  --accent-amber: #f59e0b;
+  --accent-navy:#0744ad;
+  --tooltip-bg: #e5e5e5;
+  --tooltip-color: #000000;
+}
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-border-tertiary: var(--border-tertiary);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-navy: var(--accent-navy);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 html,
 body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  font-family: var(--font-poppins);
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none; /* Edge */
   scrollbar-width: none; /* Firefox */
-  overflow: auto;
 }
 
-/* Infinite moving cards component */
-@theme inline {
-  --animate-scroll: scroll var(--animation-duration, 40s)
-    var(--animation-direction, forwards) linear infinite;
+/* Hide scrollbar for Chrome/Safari */
+::-webkit-scrollbar {
+  display: none;
+}
 
-  @keyframes scroll {
-    to {
-      transform: translate(calc(-50% - 0.5rem));
-    }
-  }
+/* Selection Styles */
+::selection {
+  background-color: var(--text-muted);
+  color: var(--bg-primary);
+}
+
+::-moz-selection {
+  background-color: var(--text-muted);
+  color: var(--bg-primary);
+}
+
+::-webkit-selection {
+  background-color: var(--text-muted);
+  color: var(--bg-primary);
+}
+
+/* Custom */
+@utility center {
+  @apply flex items-center justify-center;
+}
+
+@utility fade-ripple {
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }

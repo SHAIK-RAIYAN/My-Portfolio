@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const FONT_FAMILY = `"Roboto-Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`;
 
@@ -198,7 +198,7 @@ const PressureText = ({
   return (
     <div
       ref={containerRef}
-      className="relative h-full w-full overflow-hidden bg-transparent"
+      className="relative h-full w-full overflow-hidden bg-transparent select-none"
     >
       <style>{`
         .stroke span { position: relative; color: ${textColor}; }

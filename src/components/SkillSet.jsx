@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Tooltip } from "react-tooltip";
 import Magnet from "./ui/magnet";
 import WordAppear from "./ui/WordAppear";
+import Line from './ui/Line';
 
 function SkillSet() {
   const skills = [
@@ -25,7 +26,6 @@ function SkillSet() {
     { name: "Motion" },
     { name: "NextJS" },
     { name: "Redux" },
-    { name: "Shadcn" },
     { name: "Typescript" },
   ];
 
@@ -33,24 +33,21 @@ function SkillSet() {
     <div className="relative" id="skills">
       <div className="relative z-10 mx-auto mt-10 py-4 pb-40" id="skills">
         <div className="px-4 py-8">
-          <div className="text-3xl text-white">
-            <WordAppear word={"My"} className="text-lg text-neutral-500" />
-            <WordAppear word={"Skills"} className="text-3xl text-white" />
+          <div className="text-text-primary text-3xl">
+            <WordAppear word={"My"} className="text-text-muted text-lg" />
+            <WordAppear
+              word={"Skills"}
+              className="text-text-primary text-3xl"
+            />
           </div>
-          <motion.div
-            initial={{ width: 0, opacity: 0.5 }}
-            whileInView={{ width: "100%", opacity: 1 }}
-            transition={{ type: "tween", duration: 1.5 }}
-            viewport={{ margin: "0px 0px -20% 0px", once: true }}
-            className="mb-3 border-b-2 border-gray-400 pt-3"
-          />
+          <Line />
 
           <div>
             {skills.map((skill, index) => (
               <Magnet key={skill.name} disabled={false} magnetStrength={10}>
                 <div className="px-4">
                   <div
-                    className="text-white"
+                    className="text-text-primary"
                     data-tooltip-id="main-tooltip"
                     data-tooltip-content={skill.name}
                   >
@@ -83,8 +80,8 @@ function SkillSet() {
         place="top"
         variant="light"
         style={{
-          backgroundColor: "#e5e5e5",
-          color: "#000",
+          backgroundColor: "var(--tooltip-bg)",
+          color: "var(--tooltip-color)",
           borderRadius: "6px",
           fontSize: "10px",
           zIndex: 20,

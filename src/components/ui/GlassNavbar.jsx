@@ -1,21 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-
-const useDarkMode = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    setIsDark(mediaQuery.matches);
-
-    const handler = (e) => setIsDark(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-
-  return isDark;
-};
+import { useEffect, useRef } from "react";
+import { useTheme } from "../../Theme/ThemeProvider";
 
 const GlassNavbar = ({
   children,
@@ -46,7 +30,8 @@ const GlassNavbar = ({
   const blueChannelRef = useRef(null);
   const gaussianBlurRef = useRef(null);
 
-  const isDarkMode = useDarkMode();
+  const { theme } = useTheme();
+  const isDarkMode = theme == "dark" ? true : false;
 
   const generateDisplacementMap = () => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -246,14 +231,12 @@ const GlassNavbar = ({
         } else {
           return {
             ...baseStyles,
-            background: "rgba(255, 255, 255, 0.25)",
+            background: "rgba(255, 255, 255, 0.1)",
             backdropFilter: "blur(12px) saturate(1.8) brightness(1.1)",
             WebkitBackdropFilter: "blur(12px) saturate(1.8) brightness(1.1)",
             border: "1px solid rgba(255, 255, 255, 0.3)",
-            boxShadow: `0 8px 32px 0 rgba(31, 38, 135, 0.2),
-                        0 2px 16px 0 rgba(31, 38, 135, 0.1),
-                        inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
-                        inset 0 -1px 0 0 rgba(255, 255, 255, 0.2)`,
+            boxShadow: `inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+                        inset 0 -1px 0 0 rgba(255, 255, 255, 0.1)`,
           };
         }
       }
@@ -358,7 +341,7 @@ const GlassNavbar = ({
         </defs>
       </svg>
 
-      <div className="center relative z-10  h-fit w-fit gap-2 rounded-[inherit]">
+      <div className="center relative z-10 h-fit w-fit gap-2 rounded-[inherit]">
         {children}
       </div>
     </div>

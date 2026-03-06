@@ -2,10 +2,15 @@
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
+import { useTheme } from "../Theme/ThemeProvider";
 import WordAppear from "./ui/WordAppear";
+import Line from './ui/Line';
+
 
 function Github() {
   const [total, setTotal] = useState(null);
+
+  const { theme } = useTheme();
 
   const handleTransform = useCallback((data) => {
     const totalCount = data.reduce((sum, day) => sum + day.count, 0);
@@ -22,17 +27,14 @@ function Github() {
 
   return (
     <div className="px-4">
-      <WordAppear word={"GitHub Activity"} className="text-2xl text-white" />
-      {total !== null && (
-        <span className="text-neutral-400">Total: {total} contributions</span>
-      )}{" "}
-      <motion.div
-        initial={{ width: 0, opacity: 0.5 }}
-        whileInView={{ width: "100%", opacity: 1 }}
-        transition={{ type: "tween", duration: 1.5 }}
-        viewport={{ margin: "0px 0px -20% 0px", once: true }}
-        className="mb-3 border-b-2 border-gray-400 pt-3"
+      <WordAppear
+        word={"GitHub Activity"}
+        className="text-text-primary text-2xl"
       />
+      {total !== null && (
+        <span className="text-text-muted">Total: {total} contributions</span>
+      )}{" "}
+      <Line />
       <motion.a
         initial={{ opacity: 0, y: 40, scale: 0.8 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -47,14 +49,18 @@ function Github() {
         target="_blank"
         className="mx-auto block overflow-hidden"
       >
-        <div className="mx-auto flex w-full items-center justify-end rounded-lg border border-dashed border-neutral-700 bg-[rgb(8,10,13)] px-6 py-3 text-white">
+        <div className="border-border-secondary bg-bg-secondary text-text-primary mx-auto flex w-full items-center justify-end rounded-lg border border-dashed px-6 py-3">
           <GitHubCalendar
-            colorScheme="dark"
+            colorScheme={theme}
             username="SHAIK-RAIYAN"
             transformData={handleTransform}
             hideTotalCount
             blockSize={10.5}
             blockMargin={4}
+            theme={{
+              light: ["#f1f1f1", "#d4d4d4", "#a3a3a3", "#737373", "#262626"],
+              dark: ["#1f1f1f", "#494949", "#797979", "#a1a1a1", "#fafafa"],
+            }}
           />
         </div>
       </motion.a>

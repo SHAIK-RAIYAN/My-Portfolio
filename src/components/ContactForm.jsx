@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import { cn } from "../utils/accernity";
+import { cn } from "../utils/cn";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import SendButton from "./ui/SendButton";
@@ -94,10 +94,10 @@ export function ContactForm() {
   const inputsDisabled = loading || sent;
 
   return (
-    <div className="shadow-input mx-auto w-full rounded-none border-t border-b border-dashed border-neutral-600 p-4 md:border-t-0 md:p-8">
-      <h1 className="flex items-end justify-center gap-2 text-4xl font-bold text-neutral-300 md:justify-start md:text-4xl">
+    <div className="shadow-input border-border-primary mx-auto w-full rounded-none border-t border-b border-dashed p-4 md:border-t-0 md:p-8">
+      <h1 className="text-text-primary flex items-end justify-center gap-2 text-4xl font-bold md:justify-start md:text-4xl">
         Contact
-        <div className="mb-1 hidden h-0.5 w-full bg-neutral-600 md:block"></div>
+        <div className="bg-border-primary mb-1 hidden h-0.5 w-full md:block"></div>
       </h1>
 
       <form className="my-8" onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ export function ContactForm() {
             <div id="card" className="relative">
               <div
                 id="cardImg"
-                className="relative h-58 w-50 overflow-hidden rounded-xl border-6 border-neutral-800"
+                className="border-border-secondary relative h-58 w-50 overflow-hidden rounded-xl border-6"
               >
                 <img
                   src="/me.webp"
@@ -116,23 +116,25 @@ export function ContactForm() {
               </div>
               <div
                 id="tag"
-                className="center absolute right-0 bottom-0 h-8 w-32 rounded-tl-lg border-t-6 border-l-6 border-neutral-800 bg-[#0a0a0a] before:absolute before:-top-5.5 before:right-1.5 before:size-4 before:rounded-br-lg before:bg-transparent before:shadow-[4px_4px_0_#262626] after:absolute after:-top-4 after:right-0 after:size-4 after:rounded-br-lg after:shadow-[6px_6px_0_#0a0a0a]"
+                className="center border-border-secondary bg-bg-primary absolute right-0 bottom-0 h-8 w-32 rounded-tl-lg border-t-6 border-l-6 before:absolute before:-top-5.5 before:right-1.5 before:size-4 before:rounded-br-lg before:bg-transparent before:shadow-[4px_4px_0_var(--border-secondary)] after:absolute after:-top-4 after:right-0 after:size-4 after:rounded-br-lg after:shadow-[6px_6px_0_var(--bg-primary)]"
               >
                 <div className="center z-10 w-[95%] gap-2 rounded-sm border border-emerald-500/30 bg-emerald-500/10 px-2">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/75"></span>
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-700/75 dark:bg-emerald-400/75"></span>
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
                   </span>
-                  <p className="text-xs text-emerald-300">Available</p>
+                  <p className="text-xs text-emerald-700 dark:text-emerald-300">
+                    Available
+                  </p>
                 </div>
               </div>
               <div
                 id="curve1"
-                className="absolute bottom-1.5 left-14 size-4 rounded-br-lg bg-transparent shadow-[4px_4px_0_#262626]"
+                className="absolute bottom-1.5 left-14 size-4 rounded-br-lg bg-transparent shadow-[4px_4px_0_var(--border-secondary)]"
               ></div>
               <div
                 id="curve2"
-                className="absolute bottom-0 left-15.5 size-4 rounded-br-lg bg-transparent shadow-[4px_4px_0_#0a0a0a]"
+                className="absolute bottom-0 left-15.5 size-4 rounded-br-lg bg-transparent shadow-[4px_4px_0_var(--bg-primary)]"
               ></div>
             </div>
           </div>
@@ -196,7 +198,7 @@ export function ContactForm() {
             onChange={handleChange}
             disabled={inputsDisabled}
             className={cn(
-              `placeholder-text-neutral-600 flex h-28 w-full rounded-md border-none bg-zinc-800 px-3 py-2 text-sm text-white shadow-[0px_0px_1px_1px_#404040] transition duration-400 placeholder:text-neutral-400 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
+              `bg-bg-tertiary text-text-primary placeholder:text-text-muted focus-visible:ring-border-primary flex h-28 w-full rounded-md border-none px-3 py-2 text-md shadow-[0px_0px_1px_1px_var(--border-primary)] transition duration-400 focus-visible:ring-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
             )}
           />
         </LabelInputContainer>
@@ -243,20 +245,20 @@ export function ContactForm() {
           {!inputsDisabled && <BottomGradient />}
         </button> */}
 
-        <div className="from-transparen my-8 h-px w-full bg-linear-to-r via-neutral-700 to-transparent" />
+        <div className="via-border-primary my-8 h-px w-full bg-linear-to-r from-transparent to-transparent" />
       </form>
     </div>
   );
 }
 
-const BottomGradient = () => {
-  return (
-    <>
-      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-linear-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-linear-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
-    </>
-  );
-};
+// const BottomGradient = () => {
+//   return (
+//     <>
+//       <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-linear-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+//       <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-linear-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+//     </>
+//   );
+// };
 
 const LabelInputContainer = ({ children, className }) => {
   return (

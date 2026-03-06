@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { useLenis } from "lenis/react"; // 1. Import the hook
 import GlassNavbar from "./ui/GlassNavbar";
+import ThemeToggleBtn from "./ui/ThemeToggleBtn";
+import TimeMessage from "./ui/TimeMessage";
 
 function Navbar() {
   const lenis = useLenis();
@@ -31,7 +33,7 @@ function Navbar() {
           <img
             src="/founder2.webp"
             alt="Home"
-            className="h-13 w-13 cursor-pointer rounded-2xl border border-neutral-500 object-cover p-1 hover:scale-98 active:scale-95"
+            className="border-border-primary h-13 w-13 cursor-pointer rounded-2xl border object-cover p-1 hover:scale-98 active:scale-95"
           />
         </a>
 
@@ -40,7 +42,7 @@ function Navbar() {
           width={"fit"}
           height={"fit"}
           borderRadius={24}
-          className="mx-3 gap-8 text-sm font-light text-white md:p-3 md:text-lg"
+          className="text-text-primary mx-3 gap-8 text-sm font-light md:px-3 md:text-lg"
         >
           <a
             href="#about"
@@ -48,7 +50,7 @@ function Navbar() {
             className="group relative hidden px-2 font-mono md:inline-block"
           >
             About
-            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
+            <span className="via-text-primary absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-linear-to-r from-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
 
           <a
@@ -57,7 +59,7 @@ function Navbar() {
             className="group relative px-2 font-mono"
           >
             Skills
-            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
+            <span className="via-text-primary absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-linear-to-r from-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
 
           <a
@@ -66,7 +68,7 @@ function Navbar() {
             className="group relative px-2 font-mono md:inline-block"
           >
             Projects
-            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
+            <span className="via-text-primary absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-linear-to-r from-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
 
           <a
@@ -75,9 +77,11 @@ function Navbar() {
             className="group relative px-2 font-mono"
           >
             Contact
-            <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
+            <span className="via-text-primary absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-linear-to-r from-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"></span>
           </a>
         </GlassNavbar>
+
+        
       </motion.div>
     </div>
   );

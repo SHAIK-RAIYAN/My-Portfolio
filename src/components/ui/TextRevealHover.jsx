@@ -29,7 +29,7 @@ function TextRevealHover({
         });
 
         tl.to(split.chars, {
-          yPercent: -100, //in production 100 is correct
+          yPercent: -100, //in production -100 is correct, in local -50 due to react strict mode 
           stagger: { amount: 0.3 },
         });
 
