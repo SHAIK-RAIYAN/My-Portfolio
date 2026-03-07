@@ -1,82 +1,85 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
-import { useRef } from "react";
-
-gsap.registerPlugin(SplitText, ScrollTrigger);
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function TextAppear({ children, className = "" }) {
   const containerRef = useRef(null);
+  const [lineMapping, setLineMapping] = useState([]);
 
-  useGSAP(
-    () => {
-      const container = containerRef.current;
-      if (!container) return;
+  useEffect(() => {
+    if (!containerRef.current) return;
 
-      let childSplit;
-      let parentSplit;
+    const calculateLines = () => {
+      const spans = Array.from(containerRef.current.children);
+      let currentY = -1;
+      let currentLine = -1;
 
-      const initAnimation = () => {
-        if (childSplit) childSplit.revert();
-        if (parentSplit) parentSplit.revert();
-
-        // splits
-        childSplit = new SplitText(container, {
-          type: "lines",
-          linesClass: "split-child",
-        });
-
-        parentSplit = new SplitText(container, {
-          type: "lines",
-          linesClass: "split-parent overflow-hidden",
-        });
-
-        // Animate
-        gsap.from(childSplit.lines, {
-          yPercent: 100,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: container,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        });
-      };
-
-      // Wait for fonts to be ready before splitting - this font loading caused a big bug bro!!
-      document.fonts.ready.then(() => {
-        initAnimation();
+      const mapping = spans.map((span) => {
+        const y = span.offsetTop;
+        if (y !== currentY) {
+          currentY = y;
+          currentLine++;
+        }
+        return currentLine;
       });
 
-      // what if user resizes window
-      const handleResize = () => {
-        initAnimation(); //so run animation again
-      };
+      setLineMapping(mapping);
+    };
 
-      let resizeTimeout;
-      const debouncedResize = () => {
-        //some chatgpt code for performance hits
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(handleResize, 100);
-      };
+    const observer = new ResizeObserver(() => {
+      calculateLines();
+    });
 
-      window.addEventListener("resize", debouncedResize);
+    observer.observe(containerRef.current);
+    calculateLines();
 
-      return () => {
-        window.removeEventListener("resize", debouncedResize);
-        if (childSplit) childSplit.revert();
-        if (parentSplit) parentSplit.revert();
-      };
-    },
-    { scope: containerRef, dependencies: [children] },
-  );
+    return () => observer.disconnect();
+  }, [children]);
+
+  if (typeof children !== "string") {
+    return <div className={className}>{children}</div>;
+  }
+
+  const words = children.split(" ");
+
+  const wordVariants = {
+    hidden: { y: "100%" },
+    visible: (lineIndex) => ({
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.16, 1, 0.3, 1],
+        delay: lineIndex * 0.2,
+      },
+    }),
+  };
 
   return (
-    <div ref={containerRef} className={className}>
-      {children}
-    </div>
+    <motion.div
+      ref={containerRef}
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "0px 0px -20% 0px" }}
+    >
+      {words.map((word, index) => (
+        <span
+          key={index}
+          style={{
+            display: "inline-block",
+            overflow: "hidden",
+            verticalAlign: "bottom",
+            marginRight: index !== words.length - 1 ? "0.25em" : "0",
+          }}
+        >
+          <motion.span
+            custom={lineMapping[index] || 0}
+            variants={wordVariants}
+            style={{ display: "inline-block", willChange: "transform" }}
+          >
+            {word}
+          </motion.span>
+        </span>
+      ))}
+    </motion.div>
   );
 }

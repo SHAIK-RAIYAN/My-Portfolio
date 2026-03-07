@@ -1,4 +1,5 @@
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "../utils/cn";
 import { Input } from "./ui/input";
@@ -97,7 +98,13 @@ export function ContactForm() {
     <div className="shadow-input border-border-primary mx-auto w-full rounded-none border-t border-b border-dashed p-4 md:border-t-0 md:p-8">
       <h1 className="text-text-primary flex items-end justify-center gap-2 text-4xl font-bold md:justify-start md:text-4xl">
         Contact
-        <div className="bg-border-primary mb-1 hidden h-0.5 w-full md:block"></div>
+        <motion.div
+          initial={{ width: 0, opacity: 0.5 }}
+          whileInView={{ width: "100%", opacity: 1 }}
+          transition={{ type: "tween", duration: 1.5 }}
+          viewport={{ margin: "0px 0px -20% 0px", once: true }}
+          className="bg-border-primary mb-1 hidden h-0.5 w-full md:block"
+        />
       </h1>
 
       <form className="my-8" onSubmit={handleSubmit}>
@@ -198,7 +205,7 @@ export function ContactForm() {
             onChange={handleChange}
             disabled={inputsDisabled}
             className={cn(
-              `bg-bg-tertiary text-text-primary placeholder:text-text-muted focus-visible:ring-border-primary flex h-28 w-full rounded-md border-none px-3 py-2 text-md shadow-[0px_0px_1px_1px_var(--border-primary)] transition duration-400 focus-visible:ring-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
+              `bg-bg-tertiary text-text-primary placeholder:text-text-muted focus-visible:ring-border-primary text-md flex h-28 w-full rounded-md border-none px-3 py-2 shadow-[0px_0px_1px_1px_var(--border-primary)] transition duration-400 focus-visible:ring-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
             )}
           />
         </LabelInputContainer>

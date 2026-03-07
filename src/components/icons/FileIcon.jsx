@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { cn } from "./../../utils/cn";
+import { cn } from "../../utils/cn";
 
 const FileIcon = ({ className, size = 15, isHovered, ...props }) => {
   return (

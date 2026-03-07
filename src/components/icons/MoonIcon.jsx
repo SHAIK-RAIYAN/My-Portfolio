@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { cn } from "./../../utils/cn";
+import { cn } from "../../utils/cn";
 
 const SVG_VARIANTS = {
   normal: { rotate: 0 },

@@ -1,58 +1,62 @@
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { useEffect, useRef } from "react";
-
-gsap.registerPlugin(SplitText);
+import { motion } from "framer-motion";
 
 function TextRevealHover({
   word,
   className = "",
-  hoverColor = "text-[#FFCC00]",
+  hoverColor = "text-accent-amber", 
 }) {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    let ctx;
-    const initAnimation = () => {
-      ctx = gsap.context(() => {
-        const target = containerRef.current;
-        const split = new SplitText(target.querySelectorAll("span"), {
-          type: "chars",
-          charsClass: "inline-block",
-        });
-
-        const tl = gsap.timeline({
-          paused: true,
-          defaults: { ease: "power3.inOut", duration: 0.4 },
-        });
-
-        tl.to(split.chars, {
-          yPercent: -100, //in production -100 is correct, in local -50 due to react strict mode 
-          stagger: { amount: 0.3 },
-        });
-
-        target.addEventListener("mouseenter", () => tl.play());
-        target.addEventListener("mouseleave", () => tl.reverse());
-      }, containerRef);
-    };
-
-    document.fonts.ready.then(() => initAnimation());
-
-    return () => ctx && ctx.revert();
-  }, [word]);
+  const chars = word.split("");
+  const staggerAmount = 0.2;
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative inline-flex cursor-pointer flex-col overflow-hidden leading-none ${className}`}
+    <motion.div
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      className={`relative inline-flex cursor-pointer overflow-hidden leading-none ${className}`}
     >
-      <span>{word}</span>
-      <span className={`hover-text absolute top-full left-0 ${hoverColor}`}>
-        {word}
+      
+      <span className="sr-only">{word}</span>
+
+      <span aria-hidden="true" className="flex">
+        {chars.map((char, index) => {
+          const delay = index * (staggerAmount / chars.length);
+          const transition = {
+            duration: 0.4,
+            ease: [0.64, 0.04, 0.35, 1], // Exact match for GSAP power3.inOut
+            delay,
+          };
+
+          return (
+            <span key={index} className="relative inline-block">
+              
+              <motion.span
+                className="inline-block"
+                variants={{
+                  rest: { y: "0%" },
+                  hover: { y: "-100%" },
+                }}
+                transition={transition}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+
+              
+              <motion.span
+                className={`absolute top-full left-0 inline-block ${hoverColor}`}
+                variants={{
+                  rest: { y: "0%" },
+                  hover: { y: "-100%" },
+                }}
+                transition={transition}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            </span>
+          );
+        })}
       </span>
-    </div>
+    </motion.div>
   );
 }
 

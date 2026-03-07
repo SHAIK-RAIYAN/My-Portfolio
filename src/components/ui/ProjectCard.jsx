@@ -1,8 +1,12 @@
 // eslint-disable-next-line
 import { motion } from "framer-motion";
-import { FiGithub, FiGlobe } from "react-icons/fi";
-import LayersIcon from "./../icons/Layers";
+import { useState } from "react";
+import { FiGlobe } from "react-icons/fi";
+import GithubIcon from "../icons/GithubIcon";
+import LayersIcon from "./../icons/LayersIcon";
+
 export function ProjectCard({ project }) {
+  const [isGithubHovered, setIsGithubHovered] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -37,8 +41,10 @@ export function ProjectCard({ project }) {
                 rel="noopener noreferrer"
                 className="bg-bg-primary text-text-muted hover:bg-text-secondary/10 border-border-primary/40 hover:text-text-primary rounded-full border p-2 transition-colors"
                 aria-label="View Source Code"
+                onMouseEnter={() => setIsGithubHovered(true)}
+                onMouseLeave={() => setIsGithubHovered(false)}
               >
-                <FiGithub size={18} />
+                <GithubIcon isHovered={isGithubHovered} />
               </a>
             )}
             <a

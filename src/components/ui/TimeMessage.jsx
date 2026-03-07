@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Suspense, useEffect, useState } from "react";
 import { fetchLocationData } from "../../services/locationService";
-import GaugeIcon from "./../icons/Gauge";
+import GaugeIcon from "./../icons/GaugeIcon";
 import TimePolice from "./TimePolice";
 
 export default function TimeMessage() {

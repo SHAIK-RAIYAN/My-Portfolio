@@ -1,15 +1,17 @@
 // eslint-disable-next-line
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+import { FaLinkedin } from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
 import Typewriter from "typewriter-effect";
-import FileIcon from "./icons/File";
+import FileIcon from "./icons/FileIcon";
+import GithubIcon from "./icons/GithubIcon";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import SpotifyCard from "./ui/SpotifyCard";
-import { useState } from "react";
 
 function Home() {
   const [isFileHovered, setIsFileHovered] = useState(false);
+  const [isGithubHovered, setIsGithubHovered] = useState(false);
   return (
     <motion.div
       className="text-text-primary mt-10 flex h-screen flex-col justify-center gap-10 overflow-hidden"
@@ -45,10 +47,29 @@ function Home() {
             <h2 className="text-text-secondary relative z-20 py-4 text-4xl font-normal tracking-tight lg:text-6xl">
               Hi, I'm{" "}
               <div className="relative inline-block select-none">
-                <span className="dark:text-accent-amber absolute inset-0 text-4xl font-bold underline decoration-wavy decoration-6 opacity-70 blur-none lg:text-7xl dark:decoration-0 dark:blur-sm">
+                <span className="dark:text-accent-amber absolute inset-0 text-4xl font-bold opacity-70 blur-none lg:text-7xl dark:blur-sm">
                   Shaik Raiyan
                 </span>
 
+                <motion.svg
+                  className="text-text-primary/70 absolute -bottom-2 left-0 -z-1 h-3 w-full"
+                  viewBox="0 0 100 10"
+                  preserveAspectRatio="none"
+                >
+                  <motion.path
+                    d="M0 5 Q 12.5 0, 25 5 T 50 5 T 75 5 T 100 5"
+                    fill="transparent"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{
+                      duration: 1,
+                      ease: [0.5, 1, 0.5, 1],
+                      delay: 2.2,
+                    }}
+                  />
+                </motion.svg>
                 <span className="bg-[url(/art3.webp)] bg-cover bg-clip-text text-4xl font-bold text-transparent lg:text-7xl dark:bg-[url(/art.webp)]">
                   Shaik Raiyan
                 </span>
@@ -104,8 +125,10 @@ function Home() {
                 target="_blank"
                 data-tooltip-id="main-tooltip"
                 data-tooltip-content="GitHub"
+                onMouseEnter={() => setIsGithubHovered(true)}
+                onMouseLeave={() => setIsGithubHovered(false)}
               >
-                <FaGithub />
+                <GithubIcon isHovered={isGithubHovered} />
               </a>
               <a
                 href="https://linkedin.com/in/shaik-raiyan/"

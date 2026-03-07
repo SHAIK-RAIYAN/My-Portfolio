@@ -10,7 +10,7 @@ function SendButton({ loading, sent, inputsDisabled }) {
         className={`absolute inset-0 rounded-md bg-text-primary/10 transition-[clip-path] duration-500 ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0%_0_0)]`}
       />
       <span
-        className={`z-10 flex items-center justify-center ${loading ? "animate-pulse" : ""} pl-6 font-mono transition-transform duration-500 group-hover:-translate-x-8`}
+        className={`z-10 center ${loading ? "animate-pulse" : ""} pl-6 font-mono transition-transform duration-500 group-hover:-translate-x-8`}
       >
         {loading ? (
           "Pushing to remote..."

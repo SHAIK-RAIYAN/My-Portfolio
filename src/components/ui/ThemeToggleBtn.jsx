@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTheme } from "../../Theme/ThemeProvider";
-import { MoonIcon } from "../icons/Moon";
-import { SunIcon } from "../icons/Sun";
+import { MoonIcon } from "../icons/MoonIcon";
+import { SunIcon } from "../icons/SunIcon";
 
 function ThemeToggleBtn() {
   const { theme, toggleTheme } = useTheme();
@@ -50,7 +50,7 @@ function ThemeToggleBtn() {
   };
 
   return (
-    <div className="relative z-50 flex items-center justify-center">
+    <div className="center relative z-40 mx-5 md:mx-0">
       <motion.button
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
