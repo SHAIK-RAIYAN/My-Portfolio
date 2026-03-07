@@ -36,6 +36,7 @@ function App() {
     preloadComponents(); //download these files immediately after Home loads
   }, []);
 
+  
   return (
     <div className="font-dmsans no-scrollbar border-border-secondary bg-bg-secondary mx-auto min-h-screen w-full max-w-237.5 overflow-x-hidden border-r border-l md:px-12">
       <div className="relative z-0">

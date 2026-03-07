@@ -41,14 +41,14 @@ export default async function handler(req, res) {
     const response = await fetch(`https://ipapi.co/${ip}/json/`);
 
     if (!response.ok) {
-      console.error(`IPAPI Failed: ${response.status} ${response.statusText}`);
+      // console.error(`IPAPI Failed: ${response.status} ${response.statusText}`);
       throw new Error("Failed to fetch location");
     }
 
     const data = await response.json();
     return res.status(200).json(data);
   } catch (error) {
-    console.error("Location API Error:", error);
+    // console.error("Location API Error:", error);
     return res.status(500).json({ error: "Location fetch failed" });
   }
 }

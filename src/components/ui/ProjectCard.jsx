@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import { motion } from "framer-motion";
-import { FiGithub, FiGlobe, FiLayers } from "react-icons/fi";
+import { FiGithub, FiGlobe } from "react-icons/fi";
+import LayersIcon from "./../icons/Layers";
 export function ProjectCard({ project }) {
   return (
     <motion.div
@@ -58,7 +59,7 @@ export function ProjectCard({ project }) {
 
         <div className="border-border-secondary mt-auto flex items-center justify-between border-t pt-4">
           <div className="flex items-center gap-2">
-            <FiLayers size={16} className="text-text-tertiary" />
+            <LayersIcon size={16} className="text-text-tertiary" />
             <div className="text-text-secondary flex flex-wrap gap-2 font-mono text-xs">
               {project.techStack?.map((tech, i) => (
                 <span key={i} className="bg-border-tertiary rounded px-2 py-1">

@@ -1,17 +1,60 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { useTheme } from "../../Theme/ThemeProvider";
 import { MoonIcon } from "../icons/Moon";
 import { SunIcon } from "../icons/Sun";
 
-
-
 function ThemeToggleBtn() {
   const { theme, toggleTheme } = useTheme();
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleToggle = (event) => {
+    // Get button click coordinates
+    const x = event.clientX;
+    const y = event.clientY;
+
+    // Calculate the distance to the furthest screen corner
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    // Fallback for older browsers
+    if (!document.startViewTransition) {
+      toggleTheme();
+      return;
+    }
+
+    // Trigger the native hardware-accelerated transition
+    const transition = document.startViewTransition(() => {
+      toggleTheme();
+    });
+
+    // Animate the clip-path once the browser is ready
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 1000,
+          easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+          pseudoElement: "::view-transition-new(root)",
+        },
+      );
+    });
+  };
 
   return (
     <div className="relative z-50 flex items-center justify-center">
       <motion.button
-        onClick={toggleTheme}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={handleToggle}
         initial={{
           opacity: 0,
           x: 2,
@@ -35,9 +78,13 @@ function ThemeToggleBtn() {
             damping: 8,
           },
         }}
-        className="border-border-secondary bg-bg-primary text-text-primary hover:bg-bg-secondary rounded-lg border-2 p-2 shadow-[2px_2px_0px_0px_var(--border-secondary)] transition-colors duration-150 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+        className="border-border-secondary bg-bg-primary text-text-primary hover:bg-bg-secondary cursor-pointer rounded-lg border-2 p-2 shadow-[2px_2px_0px_0px_var(--border-secondary)] transition-colors duration-150 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
       >
-        {theme === "light" ? <SunIcon /> : <MoonIcon />}
+        {theme === "light" ? (
+          <SunIcon isHovered={isHovered} />
+        ) : (
+          <MoonIcon isHovered={isHovered} />
+        )}
       </motion.button>
     </div>
   );

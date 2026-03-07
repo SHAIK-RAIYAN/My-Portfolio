@@ -1,13 +1,15 @@
 // eslint-disable-next-line
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { IoDocumentTextOutline } from "react-icons/io5";
 import { Tooltip } from "react-tooltip";
 import Typewriter from "typewriter-effect";
+import FileIcon from "./icons/File";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import SpotifyCard from "./ui/SpotifyCard";
+import { useState } from "react";
 
 function Home() {
+  const [isFileHovered, setIsFileHovered] = useState(false);
   return (
     <motion.div
       className="text-text-primary mt-10 flex h-screen flex-col justify-center gap-10 overflow-hidden"
@@ -52,8 +54,8 @@ function Home() {
                 </span>
               </div>
             </h2>
-            <div className="border-border-primary relative flex h-8 w-full  before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw] before:bg-[repeating-linear-gradient(315deg,var(--border-primary)_0,var(--border-primary)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:opacity-[0.56]">
-              <p className="font-pixel w-full text-text-muted  text-xl font-extralight italic">
+            <div className="border-border-primary relative flex h-8 w-full before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw] before:bg-[repeating-linear-gradient(315deg,var(--border-primary)_0,var(--border-primary)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:opacity-[0.56]">
+              <p className="font-pixel text-text-muted w-full text-xl font-extralight italic">
                 I write something for machines and they understand!
               </p>
             </div>
@@ -119,13 +121,15 @@ function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group active:scale-97"
+                onMouseEnter={() => setIsFileHovered(true)}
+                onMouseLeave={() => setIsFileHovered(false)}
               >
                 <HoverBorderGradient
                   containerClassName="rounded-full "
                   as="button"
                   className="text-text-primary flex items-center space-x-1 text-sm"
                 >
-                  <IoDocumentTextOutline className="text-text-secondary group-hover:text-text-primary transition-transform group-hover:scale-110 group-hover:animate-pulse" />
+                  <FileIcon isHovered={isFileHovered} />
                   <span className="text-text-secondary font-normal">
                     Resume
                   </span>

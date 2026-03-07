@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Suspense, useEffect, useState } from "react";
 import { fetchLocationData } from "../../services/locationService";
-import { GaugeIcon } from "../icons/Gauge";
+import GaugeIcon from "./../icons/Gauge";
 import TimePolice from "./TimePolice";
 
 export default function TimeMessage() {
@@ -18,10 +18,13 @@ export default function TimeMessage() {
     setIsLocationOpen(!isLocationOpen);
   };
 
+  const [isGaugeHovered, setIsGaugeHovered] = useState(false);
   return (
     <div className="relative z-50 hidden flex-col items-end md:flex">
       <motion.button
         onClick={handleToggle}
+        onMouseEnter={() => setIsGaugeHovered(true)}
+        onMouseLeave={() => setIsGaugeHovered(false)}
         aria-expanded={isLocationOpen}
         initial={{
           opacity: 0,
@@ -46,14 +49,17 @@ export default function TimeMessage() {
             damping: 8,
           },
         }}
-        className={`group border-border-secondary text-text-primary rounded-lg border-2 p-2 transition-colors duration-150 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none ${
+        className={`group border-border-secondary text-text-primary cursor-pointer rounded-lg border-2 p-2 transition-colors duration-150 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none ${
           isLocationOpen
             ? "bg-bg-secondary"
             : "hover:bg-bg-secondary backdrop-blur-sm"
         }`}
       >
         <div className="center">
-          <GaugeIcon className="text-text-secondary" />
+          <GaugeIcon
+            isHovered={isGaugeHovered}
+            className="text-text-secondary"
+          />
         </div>
       </motion.button>
 
